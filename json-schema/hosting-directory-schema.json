@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hosting Provider",
+  "type": "object",
+  "properties": {
+    "company": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "urlhomepage": { "type": "string", "format": "uri" },
+        "urlprivacypolicy": { "type": "string", "format": "uri" },
+        "urltermsconditions": { "type": "string", "format": "uri" },
+        "urlcontentpolicy": { "type": "string", "format": "uri" },
+        "urlwordpressfiveforthefuture": { "type": "string", "format": "uri" },
+        "wordpresscontributor": { "type": "boolean" },
+        "urlopensourceprojects": { "type": "string", "format": "uri" }
+      },
+      "required": ["name", "urlhomepage", "urlprivacypolicy", "urltermsconditions", "wordpresscontributor"]
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "type": { "type": "string", "enum": ["shared", "vps", "cloud"] },
+          "management": { "type": "string", "enum": ["managed", "unmanaged"] },
+          "urlproduct": { "type": "string", "format": "uri" },
+          "controlpanel": {
+            "type": "string",
+            "enum": ["no", "plesk", "cpanel", "virtualnin", "own-panel"]
+          },
+          "price": {
+            "type": "string",
+            "enum": ["$", "$$", "$$$", "$$$$", "$$$$$"]
+          },
+          "security": {
+            "type": "object",
+            "properties": {
+              "securitycertificate": { "type": "boolean" },
+              "certificatetype": { "type": "string", "enum": ["letsencrypt", "other"] },
+              "tlsversions": { "type": "array", "items": { "type": "string", "enum": ["1.0", "1.1", "1.2", "1.3"] } },
+              "hsts": { "type": "boolean" },
+              "detectiontools": { "type": "array", "items": { "type": "string", "enum": ["none", "patchstack", "wordfence", "wpscan", "wpvulnerability", "others"] } }
+            },
+            "required": ["securitycertificate", "certificatetype", "tlsversions", "hsts", "detectiontools"]
+          },
+          "environment": {
+            "type": "object",
+            "properties": {
+              "phpversions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": ["5.6", "7.0", "7.1", "7.2", "7.3", "7.4", "8.0", "8.1", "8.2", "8.3", "8.4"]
+                }
+              },
+              "phpextensions": {
+                "type": "array",
+                "items": { "type": "string", "enum": ["json", "mysqli", "mysqlnd", "curl", "dom", "exif", "fileinfo", "hash", "igbinary", "imagick", "intl", "mbstring", "openssl", "pcre", "xml", "zip", "apcu", "memcached", "opcache", "redis", "bc", "filter", "image", "iconv", "shmop", "simplexml", "sodium", "xmlreader", "zlib", "ssh2", "ftp", "sockets"] }
+              },
+              "systempackages": {
+                "type": "array",
+                "items": { "type": "string", "enum": ["curl", "GhostScript", "ImageMagick", "OpenSSL"] }
+              },
+              "sqloptions": {
+                "type": "array",
+                "items": { "type": "string", "enum": ["MySQL 5.7", "MySQL 8.0", "MariaDB 10.3", "MariaDB 10.4", "MariaDB 10.5", "MariaDB 10.6", "MariaDB 10.11", "Other versions"] }
+              },
+              "objectcacheoptions": {
+                "type": "array",
+                "items": { "type": "string", "enum": ["Redis", "Memcached", "Own", "Others"] }
+              },
+              "serverupdates": {
+                "type": "object",
+                "properties": {
+                  "automatickernelupdates": { "type": "boolean" },
+                  "automaticphpupdates": { "type": "boolean" },
+                  "automaticmysqlmariadbupdates": { "type": "boolean" }
+                }
+              },
+              "ipaddress": {
+                "type": "object",
+                "properties": {
+                  "ipv4": { "type": "boolean" },
+                  "additionalipv4": { "type": "boolean" },
+                  "ipv6": { "type": "boolean" },
+                  "additionalipv6": { "type": "boolean" }
+                }
+              },
+              "performanceserverside": {
+                "type": "object",
+                "properties": {
+                  "gzip": { "type": "boolean" },
+                  "brotli": { "type": "boolean" },
+                  "httpversions": { "type": "array", "items": { "type": "string", "enum": ["1.1", "2.0", "3.0"] } }
+                }
+              },
+              "cdn": {
+                "type": "object",
+                "properties": {
+                  "owncdn": { "type": "boolean" },
+                  "cloudflareintegration": { "type": "boolean" },
+                  "integrationwithothers": { "type": "boolean" }
+                }
+              },
+              "datacenter": {
+                "type": "object",
+                "properties": {
+                  "countries": { "type": "array", "items": { "type": "string", "enum": ["US", "GB", "DE", "FR", "JP", "CN", "IN", "BR", "RU", "others"] } },
+                  "datastored": { "type": "array", "items": { "type": "string", "enum": ["US", "GB", "DE", "FR", "JP", "CN", "IN", "BR", "RU", "others"] } },
+                  "privacycompliance": { "type": "array", "items": { "type": "string", "enum": ["GDPR", "CCPA", "LGPD", "others"] } }
+                }
+              },
+              "support": {
+                "type": "object",
+                "properties": {
+                  "channels": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": ["Form", "Chat", "Instant messaging", "Toll-free", "Non-free phone", "Social Media", "Forum"]
+                    }
+                  },
+                  "languages": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  },
+                  "availability": {
+                    "type": "string",
+                    "enum": ["Office Hours", "24/7", "Business days", "Every day"]
+                  },
+                  "knowledgebase": { "type": "string", "format": "uri" },
+                  "community": { "type": "string", "format": "uri" }
+                }
+              }
+            },
+            "required": ["phpversions", "phpextensions", "sqloptions", "objectcacheoptions", "serverupdates", "ipaddress", "performanceserverside", "cdn", "datacenter", "support"]
+          },
+          "wordpressdevelopment": {
+            "type": "object",
+            "properties": {
+              "wordpressinstallation": {
+                "type": "string",
+                "enum": ["manual", "automatic", "hybrid"]
+              },
+              "environmentsandmigration": {
+                "type": "array",
+                "items": { "type": "string", "enum": ["staging", "production", "local"] }
+              },
+              "serveraccess": {
+                "type": "array",
+                "items": { "type": "string", "enum": ["SSH", "SFTP", "WP-CLI", "phpMyAdmin"] }
+              },
+              "dnsmanagement": {
+                "type": "string",
+                "enum": ["manageable", "external"]
+              }
+            },
+            "required": ["wordpressinstallation", "environmentsandmigration", "serveraccess", "dnsmanagement"]
+          }
+        },
+        "required": ["name", "type", "management", "urlproduct", "controlpanel", "price", "security", "environment"]
+      }
+    }
+  },
+  "required": ["company", "products"]
+}
