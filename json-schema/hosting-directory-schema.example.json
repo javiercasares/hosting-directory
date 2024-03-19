@@ -1,0 +1,124 @@
+{
+  "company": {
+    "name": "Example Hosting Company",
+    "urlhomepage": "https://example.com",
+    "urlprivacypolicy": "https://example.com/privacy",
+    "urltermsconditions": "https://example.com/terms",
+    "urlcontentpolicy": "https://example.com/content-policy",
+    "urlwordpressfiveforthefuture": "https://example.com/wordpress-five-for-the-future",
+    "wordpresscontributor": true,
+    "urlopensourceprojects": "https://example.com/opensource"
+  },
+  "products": [
+    {
+      "name": "Shared Hosting Basic",
+      "type": "shared",
+      "management": "managed",
+      "urlproduct": "https://example.com/shared-hosting-basic",
+      "controlpanel": "cpanel",
+      "price": "$",
+      "security": {
+        "securitycertificate": true,
+        "certificatetype": "letsencrypt",
+        "tlsversions": ["1.2", "1.3"],
+        "hsts": true,
+        "detectiontools": ["wordfence", "wpscan"]
+      },
+      "environment": {
+        "phpversions": ["7.4", "8.0"],
+        "phpextensions": ["json", "mysqli", "curl"],
+        "systempackages": ["curl", "OpenSSL"],
+        "sqloptions": ["MySQL 5.7", "MariaDB 10.4"],
+        "objectcacheoptions": ["Redis"],
+        "serverupdates": {
+          "automatickernelupdates": true,
+          "automaticphpupdates": true,
+          "automaticmysqlmariadbupdates": true
+        },
+        "ipaddress": {
+          "ipv4": true,
+          "additionalipv4": true,
+          "ipv6": false,
+          "additionalipv6": false
+        },
+        "performanceserverside": {
+          "gzip": true,
+          "brotli": false,
+          "httpversions": ["1.1", "2.0"]
+        },
+        "cdn": {
+          "owncdn": false,
+          "cloudflareintegration": true,
+          "integrationwithothers": false
+        },
+        "datacenter": {
+          "countries": ["US", "EU"],
+          "datastored": ["US", "EU"],
+          "privacycompliance": ["GDPR", "CCPA"]
+        },
+        "support": {
+          "channels": ["Form", "Chat", "Toll-free"],
+          "languages": ["English", "Spanish"],
+          "availability": "24/7",
+          "knowledgebase": "https://example.com/knowledge-base",
+          "community": "https://example.com/community"
+        }
+      }
+    },
+    {
+      "name": "VPS Pro",
+      "type": "vps",
+      "management": "unmanaged",
+      "urlproduct": "https://example.com/vps-pro",
+      "controlpanel": "own-panel",
+      "price": "$$$",
+      "security": {
+        "securitycertificate": false,
+        "certificatetype": null,
+        "tlsversions": ["1.2", "1.3"],
+        "hsts": true,
+        "detectiontools": ["patchstack", "wpscan"]
+      },
+      "environment": {
+        "phpversions": ["7.4", "8.0", "8.1"],
+        "phpextensions": ["json", "mysqli", "curl", "imagick"],
+        "systempackages": ["curl", "OpenSSL", "GhostScript"],
+        "sqloptions": ["MySQL 8.0", "MariaDB 10.5"],
+        "objectcacheoptions": ["Redis", "Memcached"],
+        "serverupdates": {
+          "automatickernelupdates": true,
+          "automaticphpupdates": false,
+          "automaticmysqlmariadbupdates": true
+        },
+        "ipaddress": {
+          "ipv4": true,
+          "additionalipv4": true,
+          "ipv6": true,
+          "additionalipv6": false
+        },
+        "performanceserverside": {
+          "gzip": true,
+          "brotli": true,
+          "httpversions": ["1.1", "2.0", "3.0"]
+        },
+        "cdn": {
+          "owncdn": true,
+          "cloudflareintegration": true,
+          "integrationwithothers": false
+        },
+        "datacenter": {
+          "countries": ["US", "EU", "Asia"],
+          "datastored": ["US", "EU", "Asia"],
+          "privacycompliance": ["GDPR", "CCPA", "LGPD"]
+        },
+        "support": {
+          "channels": ["Form", "Chat", "Instant messaging", "Social Media"],
+          "languages": ["English", "French", "German", "Japanese"],
+          "availability": "Office Hours",
+          "knowledgebase": "https://example.com/knowledge-base",
+          "community": "https://example.com/community"
+        }
+      }
+    }
+  ]
+}
