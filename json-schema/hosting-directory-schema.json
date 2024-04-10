@@ -131,6 +131,7 @@
             "enum": [
               "managed",
               "unmanaged"
+              "root-access"
             ],
 						"description": "Indicates whether the hosting plan is managed or unmanaged, affecting the level of support and services provided."
           },
@@ -142,22 +143,23 @@
           "controlpanel": {
             "type": "string",
             "enum": [
-              "none",
-              "plesk",
+              "aapanel",
+              "ajenti",
+              "centos",
+              "cloudpanel",
               "cpanel",
               "directadmin",
-              "virtualmin",
-              "ispconfig",
-              "ajenti",
-              "vesta",
               "froxlor",
-              "sentora",
-              "interworx",
-              "centos",
-              "aapanel",
-              "cloudpanel",
               "hestia",
+              "interworx",
+              "ispconfig",
+              "plesk",
+              "sentora",
+              "vesta",
+              "virtualmin",
+              "none",
               "own-panel"
+              "other"
             ],
 						"description": "The type of control panel provided with the hosting plan, for site management purposes."
           },
