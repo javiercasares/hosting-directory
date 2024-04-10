@@ -35,12 +35,20 @@
           "items": {
             "type": "string",
             "enum": [
-              "none",
-              "credit-card",
-              "paypal",
-              "crypto",
               "bank-transfer",
+              "credit-card",
+              "crypto",
+              "debit-card",
+              "direct-debit",
+              "ewallet",
+              "gift-card",
+              "invoice",
+              "mobile",
+              "paypal",
+              "prepaid-card",
+              "qr",
               "trial",
+              "none",
               "other"
             ],
             "description": "A list of the payment methods accepted by the company, such as credit cards, PayPal, and cryptocurrencies."
