@@ -113,12 +113,14 @@
           "category": {
             "type": "string",
             "enum": [
-              "shared",
-              "vps",
               "cloud",
               "dedicated",
               "managed",
+              "multisite",
               "reseller",
+              "shared",
+              "vps",
+              "woocommerce",
               "wordpress",
               "other"
             ],
