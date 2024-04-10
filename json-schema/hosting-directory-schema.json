@@ -6,44 +6,260 @@
     "company": {
       "type": "object",
       "properties": {
-        "name": { "type": "string" },
-        "urlhomepage": { "type": "string", "format": "uri" },
-        "urlprivacypolicy": { "type": "string", "format": "uri" },
-        "urltermsconditions": { "type": "string", "format": "uri" },
-        "urlcontentpolicy": { "type": "string", "format": "uri" },
-        "urlwordpressfiveforthefuture": { "type": "string", "format": "uri" },
-        "wordpresscontributor": { "type": "boolean" },
-        "urlopensourceprojects": { "type": "string", "format": "uri" }
+        "name": {
+          "type": "string",
+          "description": "xxxxx"
+        },
+        "urlhomepage": {
+          "type": "string",
+          "format": "uri",
+          "description": "xxxxx"
+        },
+        "urlprivacypolicy": {
+          "type": "string",
+          "format": "uri",
+          "description": "xxxxx"
+        },
+        "urltermsconditions": {
+          "type": "string",
+          "format": "uri",
+					"description": "xxxxx"
+        },
+        "urlcontentpolicy": {
+          "type": "string",
+          "format": "uri",
+					"description": "xxxxx"
+        },
+        "paymentoptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "none",
+              "credit-card",
+              "paypal",
+              "crypto",
+              "bank-transfer",
+              "trial",
+              "other"
+            ],
+            "description": "xxxxx"
+          }
+        },
+        "wordpresscontributor": {
+          "type": "boolean",
+					"description": "xxxxx"
+        },
+        "urlwordpressfiveforthefuture": {
+          "type": "string",
+          "format": "uri",
+					"description": "xxxxx"
+        },
+        "urlopensourceprojects": {
+          "type": "string",
+          "format": "uri",
+					"description": "xxxxx"
+        },
+				"users": {
+					"type": "object",
+					"properties": {
+						"wordpressorgusername": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							},
+							"description": "Your WordPress.org username associated with the company."
+						},
+						"companyemployees": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							},
+							"description": "WordPress.org employee username associated with the company."
+						},
+						"hostingtestbotname": {
+							"type": "string",
+							"description": "The name of the bot used by the WordPress.org Hosting Test Tool."
+						}
+					}
+				}
       },
-      "required": ["name", "urlhomepage", "urlprivacypolicy", "urltermsconditions", "wordpresscontributor"]
+      "required": [
+        "name",
+        "urlhomepage",
+        "urlprivacypolicy",
+        "urltermsconditions",
+        "wordpresscontributor",
+        "paymentoptions"
+      ]
     },
     "products": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "name": { "type": "string" },
-          "type": { "type": "string", "enum": ["shared", "vps", "cloud"] },
-          "management": { "type": "string", "enum": ["managed", "unmanaged"] },
-          "urlproduct": { "type": "string", "format": "uri" },
+          "name": {
+            "type": "string",
+						"description": "xxxxx"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "shared",
+              "vps",
+              "cloud",
+              "dedicated",
+              "managed",
+              "reseller",
+              "wordpress",
+              "other"
+            ],
+						"description": "xxxxx"
+          },
+          "management": {
+            "type": "string",
+            "enum": [
+              "managed",
+              "unmanaged"
+            ],
+						"description": "xxxxx"
+          },
+          "urlproduct": {
+            "type": "string",
+            "format": "uri",
+						"description": "xxxxx"
+          },
           "controlpanel": {
             "type": "string",
-            "enum": ["no", "plesk", "cpanel", "virtualnin", "own-panel"]
+            "enum": [
+              "none",
+              "plesk",
+              "cpanel",
+              "directadmin",
+              "virtualmin",
+              "ispconfig",
+              "ajenti",
+              "vesta",
+              "froxlor",
+              "sentora",
+              "interworx",
+              "centos",
+              "aapanel",
+              "cloudpanel",
+              "hestia",
+              "own-panel"
+            ],
+						"description": "xxxxx"
           },
           "price": {
             "type": "string",
-            "enum": ["$", "$$", "$$$", "$$$$", "$$$$$"]
+            "enum": [
+              "$",
+              "$$",
+              "$$$",
+              "$$$$",
+              "$$$$$"
+            ],
+						"description": "xxxxx"
           },
           "security": {
             "type": "object",
             "properties": {
-              "securitycertificate": { "type": "boolean" },
-              "certificatetype": { "type": "string", "enum": ["letsencrypt", "other"] },
-              "tlsversions": { "type": "array", "items": { "type": "string", "enum": ["1.0", "1.1", "1.2", "1.3"] } },
-              "hsts": { "type": "boolean" },
-              "detectiontools": { "type": "array", "items": { "type": "string", "enum": ["none", "patchstack", "wordfence", "wpscan", "wpvulnerability", "others"] } }
+              "securitycertificate": {
+                "type": "boolean",
+								"description": "xxxxx"
+              },
+              "certificatetype": {
+                "type": "string",
+                "enum": [
+                  "letsencrypt",
+                  "other"
+                ],
+								"description": "xxxxx"
+              },
+              "tlsversions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "1.0",
+                    "1.1",
+                    "1.2",
+                    "1.3"
+                  ]
+                },
+								"description": "xxxxx"
+              },
+              "hsts": {
+                "type": "boolean",
+								"description": "xxxxx"
+              },
+              "detectiontools": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "patchstack",
+                    "wordfence",
+                    "wpscan",
+                    "wpvulnerability",
+                    "others"
+                  ]
+                },
+								"description": "xxxxx"
+              },
+							"firewallOptions": {
+								"type": "array",
+								"items": {
+									"type": "string",
+									"enum": [
+                    "none",
+                    "ufw",
+                    "iptables",
+                    "firewalld",
+                    "nftables",
+                    "cisco-asa",
+                    "palo-alto",
+                    "other"
+                  ]
+								},
+								"description": "xxxxx"
+							},
+              "malwareScanning": {
+                "type": "boolean",
+								"description": "xxxxx"
+              },
+							"intrusionDetectionSystem": {
+								"type": "object",
+								"properties": {
+									"enabled": {
+                    "type": "boolean"
+                 	},
+									"type": {
+										"type": "string",
+										"enum": [
+                      "none",
+                      "snort",
+                      "suricata",
+                      "ossec",
+                      "other"
+                    ]
+									},
+									"description": "xxxxx"
+								}
+							}
             },
-            "required": ["securitycertificate", "certificatetype", "tlsversions", "hsts", "detectiontools"]
+            "required": [
+              "securityCertificate",
+              "certificateType",
+              "tlsVersions",
+              "hsts",
+              "detectionTools",
+							"firewallOptions",
+							"malwareScanning",
+							"intrusionDetectionSystem"
+            ]
           },
           "environment": {
             "type": "object",
@@ -52,64 +268,246 @@
                 "type": "array",
                 "items": {
                   "type": "string",
-                  "enum": ["5.6", "7.0", "7.1", "7.2", "7.3", "7.4", "8.0", "8.1", "8.2", "8.3", "8.4"]
+                  "enum": [
+                    "5.0",
+                    "5.1",
+                    "5.2",
+                    "5.3",
+                    "5.4",
+                    "5.5",
+                    "5.6",
+                    "7.0",
+                    "7.1",
+                    "7.2",
+                    "7.3",
+                    "7.4",
+                    "8.0",
+                    "8.1",
+                    "8.2",
+                    "8.3",
+                    "8.4"
+                  ],
+									"description": "xxxxx"
                 }
               },
               "phpextensions": {
                 "type": "array",
-                "items": { "type": "string", "enum": ["json", "mysqli", "mysqlnd", "curl", "dom", "exif", "fileinfo", "hash", "igbinary", "imagick", "intl", "mbstring", "openssl", "pcre", "xml", "zip", "apcu", "memcached", "opcache", "redis", "bc", "filter", "image", "iconv", "shmop", "simplexml", "sodium", "xmlreader", "zlib", "ssh2", "ftp", "sockets"] }
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "json",
+                    "mysqli",
+                    "mysqlnd",
+                    "curl",
+                    "dom",
+                    "exif",
+                    "fileinfo",
+                    "hash",
+                    "igbinary",
+                    "imagick",
+                    "intl",
+                    "mbstring",
+                    "openssl",
+                    "pcre",
+                    "xml",
+                    "zip",
+                    "apcu",
+                    "memcached",
+                    "opcache",
+                    "redis",
+                    "bc",
+                    "filter",
+                    "image",
+                    "iconv",
+                    "shmop",
+                    "simplexml",
+                    "sodium",
+                    "xmlreader",
+                    "zlib",
+                    "ssh2",
+                    "ftp",
+                    "sockets"
+                  ],
+									"description": "xxxxx"
+                }
               },
               "systempackages": {
                 "type": "array",
-                "items": { "type": "string", "enum": ["curl", "GhostScript", "ImageMagick", "OpenSSL"] }
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "curl",
+                    "ghostscript",
+                    "imagemagick",
+                    "openssl"
+                  ],
+									"description": "xxxxx"
+                }
               },
               "sqloptions": {
                 "type": "array",
-                "items": { "type": "string", "enum": ["MySQL 5.7", "MySQL 8.0", "MariaDB 10.3", "MariaDB 10.4", "MariaDB 10.5", "MariaDB 10.6", "MariaDB 10.11", "Other versions"] }
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "mysql-5.5",
+                    "mysql-5.6",
+                    "mysql-5.7",
+                    "mysql-8.0",
+                    "mysql-8.1",
+                    "mysql-8.2",
+                    "mysql-8.3",
+                    "mariadb-5.5",
+                    "mariadb-10.0",
+                    "mariadb-10.1",
+                    "mariadb-10.2",
+                    "mariadb-10.3",
+                    "mariadb-10.4",
+                    "mariadb-10.5",
+                    "mariadb-10.6",
+                    "mariadb-10.7",
+                    "mariadb-10.8",
+                    "mariadb-10.9",
+                    "mariadb-10.10",
+                    "mariadb-10.11",
+                    "mariadb-11.0",
+                    "mariadb-11.1",
+                    "mariadb-11.2",
+                    "mariadb-11.3",
+                    "other"
+                  ],
+									"description": "xxxxx"                
+                }
               },
               "objectcacheoptions": {
                 "type": "array",
-                "items": { "type": "string", "enum": ["Redis", "Memcached", "Own", "Others"] }
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "redis",
+                    "memcached",
+                    "own",
+                    "others"
+                  ],
+									"description": "xxxxx"
+                }
               },
               "serverupdates": {
                 "type": "object",
                 "properties": {
-                  "automatickernelupdates": { "type": "boolean" },
-                  "automaticphpupdates": { "type": "boolean" },
-                  "automaticmysqlmariadbupdates": { "type": "boolean" }
+                  "automatickernelupdates": {
+                    "type": "boolean",
+										"description": "xxxxx"
+                  },
+                  "automaticphpupdates": {
+                    "type": "boolean",
+										"description": "xxxxx"
+                  },
+                  "automaticdatabasebupdates": {
+                    "type": "boolean",
+										"description": "xxxxx"
+                  }
                 }
               },
               "ipaddress": {
                 "type": "object",
                 "properties": {
-                  "ipv4": { "type": "boolean" },
-                  "additionalipv4": { "type": "boolean" },
-                  "ipv6": { "type": "boolean" },
-                  "additionalipv6": { "type": "boolean" }
+                  "ipv4": {
+                    "type": "boolean",
+										"description": "xxxxx"
+                  },
+                  "additionalipv4": {
+                    "type": "boolean",
+										"description": "xxxxx"
+                  },
+                  "ipv6": {
+                    "type": "boolean",
+										"description": "xxxxx"
+                  },
+                  "additionalipv6": {
+                    "type": "boolean",
+										"description": "xxxxx"
+                  }
                 }
               },
               "performanceserverside": {
                 "type": "object",
                 "properties": {
-                  "gzip": { "type": "boolean" },
-                  "brotli": { "type": "boolean" },
-                  "httpversions": { "type": "array", "items": { "type": "string", "enum": ["1.1", "2.0", "3.0"] } }
+                  "gzip": {
+                    "type": "boolean",
+										"description": "xxxxx"
+                  },
+                  "brotli": {
+                    "type": "boolean",
+										"description": "xxxxx"
+                  },
+                  "httpversions": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "1.0",
+                        "1.1",
+                        "2.0",
+                        "3.0"
+                      ],
+											"description": "xxxxx"
+                    }
+                  }
                 }
               },
               "cdn": {
                 "type": "object",
                 "properties": {
-                  "owncdn": { "type": "boolean" },
-                  "cloudflareintegration": { "type": "boolean" },
-                  "integrationwithothers": { "type": "boolean" }
+                  "owncdn": {
+                    "type": "boolean",
+										"description": "xxxxx"
+                  },
+                  "cloudflareintegration": {
+                    "type": "boolean",
+										"description": "xxxxx"
+                  },
+                  "integrationwithothers": {
+                    "type": "boolean",
+										"description": "xxxxx"
+                  }
                 }
               },
               "datacenter": {
                 "type": "object",
                 "properties": {
-                  "countries": { "type": "array", "items": { "type": "string", "enum": ["US", "GB", "DE", "FR", "JP", "CN", "IN", "BR", "RU", "others"] } },
-                  "datastored": { "type": "array", "items": { "type": "string", "enum": ["US", "GB", "DE", "FR", "JP", "CN", "IN", "BR", "RU", "others"] } },
-                  "privacycompliance": { "type": "array", "items": { "type": "string", "enum": ["GDPR", "CCPA", "LGPD", "others"] } }
+                  "countries": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": ["AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW"],
+											"description": "xxxxx"
+                    }
+                  },
+                  "datastored": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": ["AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW"],
+											"description": "xxxxx"
+                    }
+                  },
+                  "privacycompliance": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "ccpa",
+                        "coppa",
+                        "gdpr",
+                        "lgpd",
+                        "pdpa",
+                        "pipl",
+                        "popia",
+                        "other"
+                      ],
+											"description": "xxxxx"
+                    }
+                  }
                 }
               },
               "support": {
@@ -119,50 +517,154 @@
                     "type": "array",
                     "items": {
                       "type": "string",
-                      "enum": ["Form", "Chat", "Instant messaging", "Toll-free", "Non-free phone", "Social Media", "Forum"]
+                      "enum": [
+                        "form",
+                        "chat",
+                        "instant-messaging",
+                        "phone-free",
+                        "phone-paid",
+                        "social",
+                        "forum"
+                      ],
+											"description": "xxxxx"
                     }
                   },
                   "languages": {
                     "type": "array",
-                    "items": { "type": "string" }
+                    "items": {
+                      "type": "string",
+											"description": "xxxxx"
+                    }
                   },
                   "availability": {
                     "type": "string",
-                    "enum": ["Office Hours", "24/7", "Business days", "Every day"]
+                    "enum": [
+                      "24-7",
+                      "business-days",
+                      "every-day"
+                    ],
+										"description": "xxxxx"
                   },
-                  "knowledgebase": { "type": "string", "format": "uri" },
-                  "community": { "type": "string", "format": "uri" }
+                  "knowledgebase": {
+                    "type": "string",
+                    "format": "uri",
+										"description": "xxxxx"
+                  },
+                  "community": {
+                    "type": "string",
+                    "format": "uri",
+										"description": "xxxxx"
+                  }
                 }
               }
             },
-            "required": ["phpversions", "phpextensions", "sqloptions", "objectcacheoptions", "serverupdates", "ipaddress", "performanceserverside", "cdn", "datacenter", "support"]
+            "required": [
+              "phpversions",
+              "phpextensions",
+              "sqloptions",
+              "objectcacheoptions",
+              "serverupdates",
+              "ipaddress",
+              "performanceserverside",
+              "cdn",
+              "datacenter",
+              "support"
+            ]
+          },
+          "sustainability": {
+            "type": "object",
+            "properties": {
+              "energySource": {
+                "type": "string",
+								"description": "xxxxx"
+              },
+              "carbonNeutrality": {
+                "type": "boolean",
+								"description": "xxxxx"
+              }
+            }
+          },
+          "performance": {
+            "type": "object",
+            "properties": {
+              "averageUptime": {
+                "type": "string",
+								"description": "xxxxx"
+              },
+              "pageLoadSpeed": {
+                "type": "string",
+								"description": "xxxxx"
+              }
+            }
           },
           "wordpressdevelopment": {
             "type": "object",
             "properties": {
               "wordpressinstallation": {
                 "type": "string",
-                "enum": ["manual", "automatic", "hybrid"]
+                "enum": [
+                  "manual",
+                  "automatic",
+                  "hybrid"
+                ],
+								"description": "xxxxx"
               },
               "environmentsandmigration": {
                 "type": "array",
-                "items": { "type": "string", "enum": ["staging", "production", "local"] }
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "staging",
+                    "production",
+                    "local"
+                  ]
+                }
               },
               "serveraccess": {
                 "type": "array",
-                "items": { "type": "string", "enum": ["SSH", "SFTP", "WP-CLI", "phpMyAdmin"] }
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "SSH",
+                    "SFTP",
+                    "WP-CLI",
+                    "phpMyAdmin"
+                  ],
+									"description": "xxxxx"
+                }
               },
               "dnsmanagement": {
                 "type": "string",
-                "enum": ["manageable", "external"]
+                "enum": [
+                  "manageable",
+                  "external"
+                ],
+								"description": "xxxxx"
               }
             },
-            "required": ["wordpressinstallation", "environmentsandmigration", "serveraccess", "dnsmanagement"]
+            "required": [
+              "wordpressinstallation",
+              "environmentsandmigration",
+              "serveraccess",
+              "dnsmanagement"
+            ]
           }
         },
-        "required": ["name", "type", "management", "urlproduct", "controlpanel", "price", "security", "environment"]
+        "required": [
+          "name",
+          "category",
+          "management",
+          "urlproduct",
+          "controlpanel",
+          "price",
+          "security",
+          "environment"
+        ]
       }
     }
   },
-  "required": ["company", "products"]
+  "required": [
+    "company",
+    "products"
+  ]
 }
