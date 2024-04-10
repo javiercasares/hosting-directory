@@ -18,6 +18,7 @@ An example:
 - [ ] Tool for validate the JSON Schema (probably based on other tool)
 - [ ] Tool to creathe the JSON file
 - [ ] Issue generator to send the file
+- [ ] Document how to install the file in the `.well-known` folder?
 
 ## Possible fields
 
