@@ -8,27 +8,27 @@
       "properties": {
         "name": {
           "type": "string",
-          "description": "xxxxx"
+          "description": "The official name of the hosting provider company."
         },
         "urlhomepage": {
           "type": "string",
           "format": "uri",
-          "description": "xxxxx"
+          "description": "The URL to the company's homepage, providing an overview of their services and offerings."
         },
         "urlprivacypolicy": {
           "type": "string",
           "format": "uri",
-          "description": "xxxxx"
+          "description": "The URL to the company's privacy policy page, detailing how customer data is handled and protected."
         },
         "urltermsconditions": {
           "type": "string",
           "format": "uri",
-					"description": "xxxxx"
+					"description": "The URL to the terms and conditions page, outlining the legal agreements between the company and its customers."
         },
         "urlcontentpolicy": {
           "type": "string",
           "format": "uri",
-					"description": "xxxxx"
+					"description": "The URL to the content policy page, describing what content is allowed or prohibited on hosted sites."
         },
         "paymentoptions": {
           "type": "array",
@@ -43,22 +43,22 @@
               "trial",
               "other"
             ],
-            "description": "xxxxx"
+            "description": "A list of the payment methods accepted by the company, such as credit cards, PayPal, and cryptocurrencies."
           }
         },
         "wordpresscontributor": {
           "type": "boolean",
-					"description": "xxxxx"
+					"description": "A boolean value indicating whether the company actively contributes to the WordPress project."
         },
         "urlwordpressfiveforthefuture": {
           "type": "string",
           "format": "uri",
-					"description": "xxxxx"
+					"description": "The URL to the company's Five for the Future pledge page, showing their commitment to contributing to WordPress."
         },
         "urlopensourceprojects": {
           "type": "string",
           "format": "uri",
-					"description": "xxxxx"
+					"description": "The URL to the company's open source projects page, showcasing any contributions to open source initiatives."
         },
 				"users": {
 					"type": "object",
@@ -100,7 +100,7 @@
         "properties": {
           "name": {
             "type": "string",
-						"description": "xxxxx"
+						"description": "The name of the hosting product or plan."
           },
           "category": {
             "type": "string",
@@ -114,7 +114,7 @@
               "wordpress",
               "other"
             ],
-						"description": "xxxxx"
+						"description": "The type of hosting service offered, such as VPS, cloud, or dedicated hosting."
           },
           "management": {
             "type": "string",
@@ -122,12 +122,12 @@
               "managed",
               "unmanaged"
             ],
-						"description": "xxxxx"
+						"description": "Indicates whether the hosting plan is managed or unmanaged, affecting the level of support and services provided."
           },
           "urlproduct": {
             "type": "string",
             "format": "uri",
-						"description": "xxxxx"
+						"description": "The URL to the specific product or plan's webpage."
           },
           "controlpanel": {
             "type": "string",
@@ -149,7 +149,7 @@
               "hestia",
               "own-panel"
             ],
-						"description": "xxxxx"
+						"description": "The type of control panel provided with the hosting plan, for site management purposes."
           },
           "price": {
             "type": "string",
@@ -160,14 +160,14 @@
               "$$$$",
               "$$$$$"
             ],
-						"description": "xxxxx"
+						"description": "(NEEDS REVIEW) A general price range for the hosting plan, represented by one to five dollar signs ($ to $$$$$) indicating increasing cost."
           },
           "security": {
             "type": "object",
             "properties": {
               "securitycertificate": {
                 "type": "boolean",
-								"description": "xxxxx"
+								"description": "A boolean value indicating whether a security certificate is included with the hosting plan."
               },
               "certificatetype": {
                 "type": "string",
@@ -175,7 +175,7 @@
                   "letsencrypt",
                   "other"
                 ],
-								"description": "xxxxx"
+								"description": "The type of security certificate provided, such as Let's Encrypt or other."
               },
               "tlsversions": {
                 "type": "array",
@@ -188,11 +188,11 @@
                     "1.3"
                   ]
                 },
-								"description": "xxxxx"
+								"description": "A list of supported TLS versions, ensuring secure connections."
               },
               "hsts": {
                 "type": "boolean",
-								"description": "xxxxx"
+								"description": "A boolean indicating whether HTTP Strict Transport Security is enforced."
               },
               "detectiontools": {
                 "type": "array",
@@ -207,9 +207,9 @@
                     "others"
                   ]
                 },
-								"description": "xxxxx"
+								"description": "A list of security tools used for detecting vulnerabilities."
               },
-							"firewallOptions": {
+							"firewalloptions": {
 								"type": "array",
 								"items": {
 									"type": "string",
@@ -224,13 +224,13 @@
                     "other"
                   ]
 								},
-								"description": "xxxxx"
+								"description": "A list of the firewall options or technologies used."
 							},
-              "malwareScanning": {
+              "malwarescanning": {
                 "type": "boolean",
-								"description": "xxxxx"
+								"description": "A boolean value indicating whether malware scanning is provided."
               },
-							"intrusionDetectionSystem": {
+							"intrusiondetectionsystem": {
 								"type": "object",
 								"properties": {
 									"enabled": {
@@ -246,7 +246,7 @@
                       "other"
                     ]
 									},
-									"description": "xxxxx"
+									"description": "Details about the intrusion detection system, including whether it's enabled and what type is used."
 								}
 							}
             },
@@ -256,9 +256,9 @@
               "tlsVersions",
               "hsts",
               "detectionTools",
-							"firewallOptions",
-							"malwareScanning",
-							"intrusionDetectionSystem"
+							"firewalloptions",
+							"malwarescanning",
+							"intrusiondetectionsystem"
             ]
           },
           "environment": {
@@ -287,7 +287,7 @@
                     "8.3",
                     "8.4"
                   ],
-									"description": "xxxxx"
+									"description": "Lists the PHP versions supported by the hosting service. PHP is a widely-used open-source scripting language that is especially suited for web development."
                 }
               },
               "phpextensions": {
@@ -328,7 +328,7 @@
                     "ftp",
                     "sockets"
                   ],
-									"description": "xxxxx"
+									"description": "Enumerates the PHP extensions available with the hosting plan. PHP extensions extend the functionality of PHP for more comprehensive web development capabilities."
                 }
               },
               "systempackages": {
@@ -341,7 +341,7 @@
                     "imagemagick",
                     "openssl"
                   ],
-									"description": "xxxxx"
+									"description": "Specifies the system packages installed by default with the hosting service. These packages can include essential tools and libraries necessary for web development and site management."
                 }
               },
               "sqloptions": {
@@ -375,7 +375,7 @@
                     "mariadb-11.3",
                     "other"
                   ],
-									"description": "xxxxx"                
+									"description": "Details the SQL database versions supported by the hosting environment. This includes different versions of MySQL and MariaDB, allowing for a wide range of database management options."                
                 }
               },
               "objectcacheoptions": {
@@ -388,7 +388,7 @@
                     "own",
                     "others"
                   ],
-									"description": "xxxxx"
+									"description": "Lists the object caching options available, which can include in-memory data storage systems like Redis and Memcached. Object caching helps improve WordPress performance by storing data in memory for faster retrieval."
                 }
               },
               "serverupdates": {
@@ -396,15 +396,15 @@
                 "properties": {
                   "automatickernelupdates": {
                     "type": "boolean",
-										"description": "xxxxx"
+										"description": "Indicates whether the hosting service automatically updates the server kernel. Kernel updates are crucial for security and stability."
                   },
                   "automaticphpupdates": {
                     "type": "boolean",
-										"description": "xxxxx"
+										"description": " Specifies if the hosting plan includes automatic updates for PHP, ensuring the latest features and security patches are applied."
                   },
                   "automaticdatabasebupdates": {
                     "type": "boolean",
-										"description": "xxxxx"
+										"description": "Reveals if database software updates are automatically handled, maintaining performance and security without manual intervention."
                   }
                 }
               },
@@ -413,19 +413,19 @@
                 "properties": {
                   "ipv4": {
                     "type": "boolean",
-										"description": "xxxxx"
+										"description": "A boolean indicating if an IPv4 address is provided with the hosting service."
                   },
                   "additionalipv4": {
                     "type": "boolean",
-										"description": "xxxxx"
+										"description": "Specifies if additional IPv4 addresses are available upon request or included in the plan."
                   },
                   "ipv6": {
                     "type": "boolean",
-										"description": "xxxxx"
+										"description": "States whether IPv6 support is available, which is essential for future-proofing services and enhancing connectivity."
                   },
                   "additionalipv6": {
                     "type": "boolean",
-										"description": "xxxxx"
+										"description": " Indicates if extra IPv6 addresses can be allocated to your hosting account, useful for large-scale deployments."
                   }
                 }
               },
@@ -434,11 +434,11 @@
                 "properties": {
                   "gzip": {
                     "type": "boolean",
-										"description": "xxxxx"
+										"description": "Specifies if GZIP compression is available, a method for reducing the size of the files sent from your server to increase the speed to which they are transferred to the browser."
                   },
                   "brotli": {
                     "type": "boolean",
-										"description": "xxxxx"
+										"description": "A boolean indicating whether Brotli compression is supported. Brotli is a newer compression algorithm that can provide better compression ratios than GZIP."
                   },
                   "httpversions": {
                     "type": "array",
@@ -450,7 +450,7 @@
                         "2.0",
                         "3.0"
                       ],
-											"description": "xxxxx"
+											"description": " Lists the HTTP protocol versions supported by the hosting server, impacting the speed and security of data transfer between the server and clients."
                     }
                   }
                 }
@@ -460,15 +460,15 @@
                 "properties": {
                   "owncdn": {
                     "type": "boolean",
-										"description": "xxxxx"
+										"description": "Indicates if the hosting provider offers its own CDN (Content Delivery Network) solution, which can greatly improve website load times for visitors from different geographical locations."
                   },
                   "cloudflareintegration": {
                     "type": "boolean",
-										"description": "xxxxx"
+										"description": "Specifies whether there is direct integration support for Cloudflare's services, including its CDN, security, and DNS services."
                   },
                   "integrationwithothers": {
                     "type": "boolean",
-										"description": "xxxxx"
+										"description": "A boolean that shows if the hosting service integrates with other CDN providers, offering flexibility in choosing CDN services."
                   }
                 }
               },
@@ -480,7 +480,7 @@
                     "items": {
                       "type": "string",
                       "enum": ["AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW"],
-											"description": "xxxxx"
+											"description": "Lists the countries where the hosting provider's data centers are located. This information is crucial for understanding the geographical distribution of the provider's infrastructure and can affect website latency and compliance with regional regulations."
                     }
                   },
                   "datastored": {
@@ -488,7 +488,7 @@
                     "items": {
                       "type": "string",
                       "enum": ["AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW"],
-											"description": "xxxxx"
+											"description": "Enumerates the countries where the hosting provider stores its clients' data. This detail is important for clients concerned with data sovereignty and compliance with local data protection laws."
                     }
                   },
                   "privacycompliance": {
@@ -505,7 +505,7 @@
                         "popia",
                         "other"
                       ],
-											"description": "xxxxx"
+											"description": "xxSpecifies the privacy and data protection regulations with which the hosting provider complies. Examples include GDPR for data protection in the European Union, CCPA for privacy in California, USA, and others. Compliance with these regulations ensures that the provider adheres to legal standards for data privacy and protection.xxx"
                     }
                   }
                 }
@@ -526,14 +526,14 @@
                         "social",
                         "forum"
                       ],
-											"description": "xxxxx"
+											"description": "Lists the various support channels through which customers can contact the hosting provider. These can include online forms, live chat, instant messaging, toll-free phone support, paid phone support, social media platforms, and community forums. This diversity allows customers to choose their preferred method of communication for support issues."
                     }
                   },
                   "languages": {
                     "type": "array",
                     "items": {
                       "type": "string",
-											"description": "xxxxx"
+											"description": "Specifies the languages in which support is available, ensuring that customers can receive assistance in their preferred language. This is crucial for a hosting provider with a global customer base, as it enhances the support experience and accessibility."
                     }
                   },
                   "availability": {
@@ -543,17 +543,17 @@
                       "business-days",
                       "every-day"
                     ],
-										"description": "xxxxx"
+										"description": "Details the availability schedule of the support team, which can vary from 24/7 support to business hours or specific days of the week. This information helps customers know when they can expect to receive help for their inquiries or issues."
                   },
                   "knowledgebase": {
                     "type": "string",
                     "format": "uri",
-										"description": "xxxxx"
+										"description": "Provides the URL to the hosting provider's knowledgebase. This online repository contains articles, guides, and FAQs to help customers troubleshoot issues on their own and learn more about using the hosting services effectively."
                   },
                   "community": {
                     "type": "string",
                     "format": "uri",
-										"description": "xxxxx"
+										"description": "The URL to the community forum or platform where users can engage with each other, ask questions, share solutions, and discuss topics related to the hosting services. Community forums are a valuable resource for peer-to-peer support and building a sense of belonging among the provider's customers."
                   }
                 }
               }
@@ -576,11 +576,11 @@
             "properties": {
               "energySource": {
                 "type": "string",
-								"description": "xxxxx"
+								"description": "Describes the primary source of energy used by the hosting provider's data centers. This could include renewable sources like solar or wind, traditional sources like coal or natural gas, or a mix. This information is important for customers looking for environmentally friendly hosting options."
               },
               "carbonNeutrality": {
                 "type": "boolean",
-								"description": "xxxxx"
+								"description": "Indicates whether the hosting provider operates on a carbon-neutral basis, either through reducing emissions or purchasing carbon offsets. This reflects the company's commitment to minimizing its environmental impact."
               }
             }
           },
@@ -589,11 +589,11 @@
             "properties": {
               "averageUptime": {
                 "type": "string",
-								"description": "xxxxx"
+								"description": "Represents the average percentage of time the hosting service is operational and accessible online. Uptime is a critical measure of reliability, with 99.9% being the industry standard for most services."
               },
               "pageLoadSpeed": {
                 "type": "string",
-								"description": "xxxxx"
+								"description": "Indicates the average time it takes for pages hosted on the provider's servers to load. Faster page load speeds improve user experience and are beneficial for search engine optimization."
               }
             }
           },
@@ -607,7 +607,7 @@
                   "automatic",
                   "hybrid"
                 ],
-								"description": "xxxxx"
+								"description": "Specifies the types of WordPress installation processes supported by the hosting provider, including manual installation by the user, automatic installation by the provider, or a hybrid approach that involves both."
               },
               "environmentsandmigration": {
                 "type": "array",
@@ -619,6 +619,7 @@
                     "local"
                   ]
                 }
+                "description": "Lists the supported environments for WordPress development, such as staging (for testing), production (live environment), and local (development on a local machine). Also refers to the provider’s support for migrating WordPress sites between different environments."
               },
               "serveraccess": {
                 "type": "array",
@@ -630,7 +631,7 @@
                     "WP-CLI",
                     "phpMyAdmin"
                   ],
-									"description": "xxxxx"
+									"description": "Enumerates the types of server access provided, such as SSH (Secure Shell) for secure command-line access, SFTP (Secure File Transfer Protocol) for file transfers, WP-CLI (WordPress Command Line Interface) for managing WordPress sites, and phpMyAdmin for database management. These tools give developers flexibility in managing and deploying WordPress sites."
                 }
               },
               "dnsmanagement": {
@@ -639,7 +640,7 @@
                   "manageable",
                   "external"
                 ],
-								"description": "xxxxx"
+								"description": "Details whether the hosting provider offers DNS (Domain Name System) management capabilities, allowing customers to manage domain records directly or if they must use external services. DNS management is crucial for directing traffic to your website and configuring subdomains and email services."
               }
             },
             "required": [
