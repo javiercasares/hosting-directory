@@ -1,683 +1,1326 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Hosting Provider",
-  "type": "object",
-  "properties": {
-    "company": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "The official name of the hosting provider company."
-        },
-        "urlhomepage": {
-          "type": "string",
-          "format": "uri",
-          "description": "The URL to the company's homepage, providing an overview of their services and offerings."
-        },
-        "urlprivacypolicy": {
-          "type": "string",
-          "format": "uri",
-          "description": "The URL to the company's privacy policy page, detailing how customer data is handled and protected."
-        },
-        "urltermsconditions": {
-          "type": "string",
-          "format": "uri",
-					"description": "The URL to the terms and conditions page, outlining the legal agreements between the company and its customers."
-        },
-        "urlcontentpolicy": {
-          "type": "string",
-          "format": "uri",
-					"description": "The URL to the content policy page, describing what content is allowed or prohibited on hosted sites."
-        },
-        "paymentoptions": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "bank-transfer",
-              "credit-card",
-              "crypto",
-              "debit-card",
-              "direct-debit",
-              "ewallet",
-              "gift-card",
-              "invoice",
-              "mobile",
-              "paypal",
-              "prepaid-card",
-              "qr",
-              "trial",
-              "none",
-              "other"
-            ],
-            "description": "A list of the payment methods accepted by the company, such as credit cards, PayPal, and cryptocurrencies."
-          }
-        },
-        "wordpresscontributor": {
-          "type": "boolean",
-					"description": "A boolean value indicating whether the company actively contributes to the WordPress project."
-        },
-        "urlwordpressfiveforthefuture": {
-          "type": "string",
-          "format": "uri",
-					"description": "The URL to the company's Five for the Future pledge page, showing their commitment to contributing to WordPress."
-        },
-        "urlopensourceprojects": {
-          "type": "string",
-          "format": "uri",
-					"description": "The URL to the company's open source projects page, showcasing any contributions to open source initiatives."
-        },
-				"users": {
-					"type": "object",
-					"properties": {
-						"wordpressorgusername": {
-							"type": "array",
-							"items": {
-								"type": "string"
-							},
-							"description": "Your WordPress.org username associated with the company."
-						},
-						"companyemployees": {
-							"type": "array",
-							"items": {
-								"type": "string"
-							},
-							"description": "WordPress.org employee username associated with the company."
-						},
-						"hostingtestbotname": {
-							"type": "string",
-							"description": "The name of the bot used by the WordPress.org Hosting Test Tool."
-						}
-					}
-				}
-      },
-      "required": [
-        "name",
-        "urlhomepage",
-        "urlprivacypolicy",
-        "urltermsconditions",
-        "wordpresscontributor",
-        "paymentoptions"
-      ]
-    },
-    "products": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-						"description": "The name of the hosting product or plan."
-          },
-          "category": {
-            "type": "string",
-            "enum": [
-              "cloud",
-              "dedicated",
-              "managed",
-              "multisite",
-              "reseller",
-              "shared",
-              "vps",
-              "woocommerce",
-              "wordpress",
-              "other"
-            ],
-						"description": "The type of hosting service offered, such as VPS, cloud, or dedicated hosting."
-          },
-          "management": {
-            "type": "string",
-            "enum": [
-              "managed",
-              "unmanaged"
-              "root-access"
-            ],
-						"description": "Indicates whether the hosting plan is managed or unmanaged, affecting the level of support and services provided."
-          },
-          "urlproduct": {
-            "type": "string",
-            "format": "uri",
-						"description": "The URL to the specific product or plan's webpage."
-          },
-          "controlpanel": {
-            "type": "string",
-            "enum": [
-              "aapanel",
-              "ajenti",
-              "centos",
-              "cloudpanel",
-              "cpanel",
-              "directadmin",
-              "froxlor",
-              "hestia",
-              "interworx",
-              "ispconfig",
-              "plesk",
-              "sentora",
-              "vesta",
-              "virtualmin",
-              "none",
-              "own-panel"
-              "other"
-            ],
-						"description": "The type of control panel provided with the hosting plan, for site management purposes."
-          },
-          "price": {
-            "type": "string",
-            "enum": [
-              "$",
-              "$$",
-              "$$$",
-              "$$$$",
-              "$$$$$"
-            ],
-						"description": "(NEEDS REVIEW) A general price range for the hosting plan, represented by one to five dollar signs ($ to $$$$$) indicating increasing cost."
-          },
-          "security": {
-            "type": "object",
-            "properties": {
-              "securitycertificate": {
-                "type": "boolean",
-								"description": "A boolean value indicating whether a security certificate is included with the hosting plan."
-              },
-              "certificatetype": {
-                "type": "string",
-                "enum": [
-                  "letsencrypt",
-                  "other"
-                ],
-								"description": "The type of security certificate provided, such as Let's Encrypt or other."
-              },
-              "tlsversions": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "enum": [
-                    "1.0",
-                    "1.1",
-                    "1.2",
-                    "1.3"
-                  ]
+"$schema": "https://json-schema.org/draft/2020-12/schema",
+"properties":
+    {
+    "company":
+        {
+        "properties":
+            {
+            "name":
+                {
+                "description": "The official name of the hosting provider company.",
+                "type": "string"
                 },
-								"description": "A list of supported TLS versions, ensuring secure connections."
-              },
-              "hsts": {
-                "type": "boolean",
-								"description": "A boolean indicating whether HTTP Strict Transport Security is enforced."
-              },
-              "detectiontools": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "enum": [
-                    "none",
-                    "patchstack",
-                    "wordfence",
-                    "wpscan",
-                    "wpvulnerability",
-                    "others"
-                  ]
-                },
-								"description": "A list of security tools used for detecting vulnerabilities."
-              },
-							"firewalloptions": {
-								"type": "array",
-								"items": {
-									"type": "string",
-									"enum": [
-                    "none",
-                    "ufw",
-                    "iptables",
-                    "firewalld",
-                    "nftables",
-                    "cisco-asa",
-                    "palo-alto",
-                    "other"
-                  ]
-								},
-								"description": "A list of the firewall options or technologies used."
-							},
-              "malwarescanning": {
-                "type": "boolean",
-								"description": "A boolean value indicating whether malware scanning is provided."
-              },
-							"intrusiondetectionsystem": {
-								"type": "object",
-								"properties": {
-									"enabled": {
-                    "type": "boolean"
-                 	},
-									"type": {
-										"type": "string",
-										"enum": [
-                      "none",
-                      "snort",
-                      "suricata",
-                      "ossec",
-                      "other"
-                    ]
-									},
-									"description": "Details about the intrusion detection system, including whether it's enabled and what type is used."
-								}
-							}
-            },
-            "required": [
-              "securityCertificate",
-              "certificateType",
-              "tlsVersions",
-              "hsts",
-              "detectionTools",
-							"firewalloptions",
-							"malwarescanning",
-							"intrusiondetectionsystem"
-            ]
-          },
-          "environment": {
-            "type": "object",
-            "properties": {
-              "phpversions": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "enum": [
-                    "5.0",
-                    "5.1",
-                    "5.2",
-                    "5.3",
-                    "5.4",
-                    "5.5",
-                    "5.6",
-                    "7.0",
-                    "7.1",
-                    "7.2",
-                    "7.3",
-                    "7.4",
-                    "8.0",
-                    "8.1",
-                    "8.2",
-                    "8.3",
-                    "8.4"
-                  ],
-									"description": "Lists the PHP versions supported by the hosting service. PHP is a widely-used open-source scripting language that is especially suited for web development."
-                }
-              },
-              "phpextensions": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "enum": [
-                    "json",
-                    "mysqli",
-                    "mysqlnd",
-                    "curl",
-                    "dom",
-                    "exif",
-                    "fileinfo",
-                    "hash",
-                    "igbinary",
-                    "imagick",
-                    "intl",
-                    "mbstring",
-                    "openssl",
-                    "pcre",
-                    "xml",
-                    "zip",
-                    "apcu",
-                    "memcached",
-                    "opcache",
-                    "redis",
-                    "bc",
-                    "filter",
-                    "image",
-                    "iconv",
-                    "shmop",
-                    "simplexml",
-                    "sodium",
-                    "xmlreader",
-                    "zlib",
-                    "ssh2",
-                    "ftp",
-                    "sockets"
-                  ],
-									"description": "Enumerates the PHP extensions available with the hosting plan. PHP extensions extend the functionality of PHP for more comprehensive web development capabilities."
-                }
-              },
-              "systempackages": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "enum": [
-                    "curl",
-                    "ghostscript",
-                    "imagemagick",
-                    "openssl"
-                  ],
-									"description": "Specifies the system packages installed by default with the hosting service. These packages can include essential tools and libraries necessary for web development and site management."
-                }
-              },
-              "sqloptions": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "enum": [
-                    "mysql-5.5",
-                    "mysql-5.6",
-                    "mysql-5.7",
-                    "mysql-8.0",
-                    "mysql-8.1",
-                    "mysql-8.2",
-                    "mysql-8.3",
-                    "mariadb-5.5",
-                    "mariadb-10.0",
-                    "mariadb-10.1",
-                    "mariadb-10.2",
-                    "mariadb-10.3",
-                    "mariadb-10.4",
-                    "mariadb-10.5",
-                    "mariadb-10.6",
-                    "mariadb-10.7",
-                    "mariadb-10.8",
-                    "mariadb-10.9",
-                    "mariadb-10.10",
-                    "mariadb-10.11",
-                    "mariadb-11.0",
-                    "mariadb-11.1",
-                    "mariadb-11.2",
-                    "mariadb-11.3",
-                    "other"
-                  ],
-									"description": "Details the SQL database versions supported by the hosting environment. This includes different versions of MySQL and MariaDB, allowing for a wide range of database management options."                
-                }
-              },
-              "objectcacheoptions": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "enum": [
-                    "redis",
-                    "memcached",
-                    "own",
-                    "others"
-                  ],
-									"description": "Lists the object caching options available, which can include in-memory data storage systems like Redis and Memcached. Object caching helps improve WordPress performance by storing data in memory for faster retrieval."
-                }
-              },
-              "serverupdates": {
-                "type": "object",
-                "properties": {
-                  "automatickernelupdates": {
-                    "type": "boolean",
-										"description": "Indicates whether the hosting service automatically updates the server kernel. Kernel updates are crucial for security and stability."
-                  },
-                  "automaticphpupdates": {
-                    "type": "boolean",
-										"description": " Specifies if the hosting plan includes automatic updates for PHP, ensuring the latest features and security patches are applied."
-                  },
-                  "automaticdatabasebupdates": {
-                    "type": "boolean",
-										"description": "Reveals if database software updates are automatically handled, maintaining performance and security without manual intervention."
-                  }
-                }
-              },
-              "ipaddress": {
-                "type": "object",
-                "properties": {
-                  "ipv4": {
-                    "type": "boolean",
-										"description": "A boolean indicating if an IPv4 address is provided with the hosting service."
-                  },
-                  "additionalipv4": {
-                    "type": "boolean",
-										"description": "Specifies if additional IPv4 addresses are available upon request or included in the plan."
-                  },
-                  "ipv6": {
-                    "type": "boolean",
-										"description": "States whether IPv6 support is available, which is essential for future-proofing services and enhancing connectivity."
-                  },
-                  "additionalipv6": {
-                    "type": "boolean",
-										"description": " Indicates if extra IPv6 addresses can be allocated to your hosting account, useful for large-scale deployments."
-                  }
-                }
-              },
-              "performanceserverside": {
-                "type": "object",
-                "properties": {
-                  "gzip": {
-                    "type": "boolean",
-										"description": "Specifies if GZIP compression is available, a method for reducing the size of the files sent from your server to increase the speed to which they are transferred to the browser."
-                  },
-                  "brotli": {
-                    "type": "boolean",
-										"description": "A boolean indicating whether Brotli compression is supported. Brotli is a newer compression algorithm that can provide better compression ratios than GZIP."
-                  },
-                  "httpversions": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "1.0",
-                        "1.1",
-                        "2.0",
-                        "3.0"
-                      ],
-											"description": " Lists the HTTP protocol versions supported by the hosting server, impacting the speed and security of data transfer between the server and clients."
-                    }
-                  }
-                }
-              },
-              "cdn": {
-                "type": "object",
-                "properties": {
-                  "owncdn": {
-                    "type": "boolean",
-										"description": "Indicates if the hosting provider offers its own CDN (Content Delivery Network) solution, which can greatly improve website load times for visitors from different geographical locations."
-                  },
-                  "cloudflareintegration": {
-                    "type": "boolean",
-										"description": "Specifies whether there is direct integration support for Cloudflare's services, including its CDN, security, and DNS services."
-                  },
-                  "integrationwithothers": {
-                    "type": "boolean",
-										"description": "A boolean that shows if the hosting service integrates with other CDN providers, offering flexibility in choosing CDN services."
-                  }
-                }
-              },
-              "datacenter": {
-                "type": "object",
-                "properties": {
-                  "countries": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "enum": ["AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW"],
-											"description": "Lists the countries where the hosting provider's data centers are located. This information is crucial for understanding the geographical distribution of the provider's infrastructure and can affect website latency and compliance with regional regulations."
-                    }
-                  },
-                  "datastored": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "enum": ["AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW"],
-											"description": "Enumerates the countries where the hosting provider stores its clients' data. This detail is important for clients concerned with data sovereignty and compliance with local data protection laws."
-                    }
-                  },
-                  "privacycompliance": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "ccpa",
-                        "coppa",
-                        "gdpr",
-                        "lgpd",
-                        "pdpa",
-                        "pipl",
-                        "popia",
+            "paymentoptions":
+                {
+                "items":
+                    {
+                    "description": "A list of the payment methods accepted by the company, such as credit cards, PayPal, and cryptocurrencies.",
+                    "enum":
+                        [
+                        "bank-transfer",
+                        "credit-card",
+                        "crypto",
+                        "debit-card",
+                        "direct-debit",
+                        "ewallet",
+                        "gift-card",
+                        "invoice",
+                        "mobile",
+                        "paypal",
+                        "prepaid-card",
+                        "qr",
+                        "trial",
+                        "none",
                         "other"
-                      ],
-											"description": "xxSpecifies the privacy and data protection regulations with which the hosting provider complies. Examples include GDPR for data protection in the European Union, CCPA for privacy in California, USA, and others. Compliance with these regulations ensures that the provider adheres to legal standards for data privacy and protection.xxx"
-                    }
-                  }
+                        ],
+                    "type": "string"
+                    },
+                "type": "array"
+                },
+            "urlcontentpolicy":
+                {
+                "description": "The URL to the content policy page, describing what content is allowed or prohibited on hosted sites.",
+                "format": "uri",
+                "type": "string"
+                },
+            "urlhomepage":
+                {
+                "description": "The URL to the company's homepage, providing an overview of their services and offerings.",
+                "format": "uri",
+                "type": "string"
+                },
+            "urlopensourceprojects":
+                {
+                "description": "The URL to the company's open source projects page, showcasing any contributions to open source initiatives.",
+                "format": "uri",
+                "type": "string"
+                },
+            "urlprivacypolicy":
+                {
+                "description": "The URL to the company's privacy policy page, detailing how customer data is handled and protected.",
+                "format": "uri",
+                "type": "string"
+                },
+            "urltermsconditions":
+                {
+                "description": "The URL to the terms and conditions page, outlining the legal agreements between the company and its customers.",
+                "format": "uri",
+                "type": "string"
+                },
+            "urlwordpressfiveforthefuture":
+                {
+                "description": "The URL to the company's Five for the Future pledge page, showing their commitment to contributing to WordPress.",
+                "format": "uri",
+                "type": "string"
+                },
+            "users":
+                {
+                "properties":
+                    {
+                    "companyemployees":
+                        {
+                        "description": "WordPress.org employee username associated with the company.",
+                        "items":
+                            {
+                            "type": "string"
+                            },
+                        "type": "array"
+                        },
+                    "hostingtestbotname":
+                        {
+                        "description": "The name of the bot used by the WordPress.org Hosting Test Tool.",
+                        "type": "string"
+                        },
+                    "wordpressorgusername":
+                        {
+                        "description": "Your WordPress.org username associated with the company.",
+                        "items":
+                            {
+                            "type": "string"
+                            },
+                        "type": "array"
+                        }
+                    },
+                "type": "object"
+                },
+            "wordpresscontributor":
+                {
+                "description": "A boolean value indicating whether the company actively contributes to the WordPress project.",
+                "type": "boolean"
                 }
-              },
-              "support": {
-                "type": "object",
-                "properties": {
-                  "channels": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "form",
-                        "chat",
-                        "instant-messaging",
-                        "phone-free",
-                        "phone-paid",
-                        "social",
-                        "forum"
-                      ],
-											"description": "Lists the various support channels through which customers can contact the hosting provider. These can include online forms, live chat, instant messaging, toll-free phone support, paid phone support, social media platforms, and community forums. This diversity allows customers to choose their preferred method of communication for support issues."
-                    }
-                  },
-                  "languages": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-											"description": "Specifies the languages in which support is available, ensuring that customers can receive assistance in their preferred language. This is crucial for a hosting provider with a global customer base, as it enhances the support experience and accessibility."
-                    }
-                  },
-                  "availability": {
-                    "type": "string",
-                    "enum": [
-                      "24-7",
-                      "business-days",
-                      "every-day"
-                    ],
-										"description": "Details the availability schedule of the support team, which can vary from 24/7 support to business hours or specific days of the week. This information helps customers know when they can expect to receive help for their inquiries or issues."
-                  },
-                  "knowledgebase": {
-                    "type": "string",
-                    "format": "uri",
-										"description": "Provides the URL to the hosting provider's knowledgebase. This online repository contains articles, guides, and FAQs to help customers troubleshoot issues on their own and learn more about using the hosting services effectively."
-                  },
-                  "community": {
-                    "type": "string",
-                    "format": "uri",
-										"description": "The URL to the community forum or platform where users can engage with each other, ask questions, share solutions, and discuss topics related to the hosting services. Community forums are a valuable resource for peer-to-peer support and building a sense of belonging among the provider's customers."
-                  }
-                }
-              }
             },
-            "required": [
-              "phpversions",
-              "phpextensions",
-              "sqloptions",
-              "objectcacheoptions",
-              "serverupdates",
-              "ipaddress",
-              "performanceserverside",
-              "cdn",
-              "datacenter",
-              "support"
-            ]
-          },
-          "sustainability": {
-            "type": "object",
-            "properties": {
-              "energySource": {
-                "type": "string",
-								"description": "Describes the primary source of energy used by the hosting provider's data centers. This could include renewable sources like solar or wind, traditional sources like coal or natural gas, or a mix. This information is important for customers looking for environmentally friendly hosting options."
-              },
-              "carbonNeutrality": {
-                "type": "boolean",
-								"description": "Indicates whether the hosting provider operates on a carbon-neutral basis, either through reducing emissions or purchasing carbon offsets. This reflects the company's commitment to minimizing its environmental impact."
-              }
-            }
-          },
-          "performance": {
-            "type": "object",
-            "properties": {
-              "averageUptime": {
-                "type": "string",
-								"description": "Represents the average percentage of time the hosting service is operational and accessible online. Uptime is a critical measure of reliability, with 99.9% being the industry standard for most services."
-              },
-              "pageLoadSpeed": {
-                "type": "string",
-								"description": "Indicates the average time it takes for pages hosted on the provider's servers to load. Faster page load speeds improve user experience and are beneficial for search engine optimization."
-              }
-            }
-          },
-          "wordpressdevelopment": {
-            "type": "object",
-            "properties": {
-              "wordpressinstallation": {
-                "type": "string",
-                "enum": [
-                  "manual",
-                  "automatic",
-                  "hybrid"
-                ],
-								"description": "Specifies the types of WordPress installation processes supported by the hosting provider, including manual installation by the user, automatic installation by the provider, or a hybrid approach that involves both."
-              },
-              "environmentsandmigration": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "enum": [
-                    "staging",
-                    "production",
-                    "local"
-                  ]
-                }
-                "description": "Lists the supported environments for WordPress development, such as staging (for testing), production (live environment), and local (development on a local machine). Also refers to the provider’s support for migrating WordPress sites between different environments."
-              },
-              "serveraccess": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "enum": [
-                    "SSH",
-                    "SFTP",
-                    "WP-CLI",
-                    "phpMyAdmin"
-                  ],
-									"description": "Enumerates the types of server access provided, such as SSH (Secure Shell) for secure command-line access, SFTP (Secure File Transfer Protocol) for file transfers, WP-CLI (WordPress Command Line Interface) for managing WordPress sites, and phpMyAdmin for database management. These tools give developers flexibility in managing and deploying WordPress sites."
-                }
-              },
-              "dnsmanagement": {
-                "type": "string",
-                "enum": [
-                  "manageable",
-                  "external"
-                ],
-								"description": "Details whether the hosting provider offers DNS (Domain Name System) management capabilities, allowing customers to manage domain records directly or if they must use external services. DNS management is crucial for directing traffic to your website and configuring subdomains and email services."
-              }
-            },
-            "required": [
-              "wordpressinstallation",
-              "environmentsandmigration",
-              "serveraccess",
-              "dnsmanagement"
-            ]
-          }
+        "required":
+            [
+            "name",
+            "urlhomepage",
+            "urlprivacypolicy",
+            "urltermsconditions",
+            "wordpresscontributor",
+            "paymentoptions"
+            ],
+        "type": "object"
         },
-        "required": [
-          "name",
-          "category",
-          "management",
-          "urlproduct",
-          "controlpanel",
-          "price",
-          "security",
-          "environment"
-        ]
-      }
-    }
-  },
-  "required": [
+    "products":
+        {
+        "items":
+            {
+            "properties":
+                {
+                "category":
+                    {
+                    "description": "The type of hosting service offered, such as VPS, cloud, or dedicated hosting.",
+                    "enum":
+                        [
+                        "cloud",
+                        "dedicated",
+                        "managed",
+                        "multisite",
+                        "reseller",
+                        "shared",
+                        "vps",
+                        "woocommerce",
+                        "wordpress",
+                        "other"
+                        ],
+                    "type": "string"
+                    },
+                "controlpanel":
+                    {
+                    "description": "The type of control panel provided with the hosting plan, for site management purposes.",
+                    "enum":
+                        [
+                        "aapanel",
+                        "ajenti",
+                        "centos",
+                        "cloudpanel",
+                        "cpanel",
+                        "directadmin",
+                        "froxlor",
+                        "hestia",
+                        "interworx",
+                        "ispconfig",
+                        "plesk",
+                        "sentora",
+                        "vesta",
+                        "virtualmin",
+                        "none",
+                        "own-panel",
+                        "other"
+                        ],
+                    "type": "string"
+                    },
+                "environment":
+                    {
+                    "properties":
+                        {
+                        "cdn":
+                            {
+                            "properties":
+                                {
+                                "cloudflareintegration":
+                                    {
+                                    "description": "Specifies whether there is direct integration support for Cloudflare's services, including its CDN, security, and DNS services.",
+                                    "type": "boolean"
+                                    },
+                                "integrationwithothers":
+                                    {
+                                    "description": "A boolean that shows if the hosting service integrates with other CDN providers, offering flexibility in choosing CDN services.",
+                                    "type": "boolean"
+                                    },
+                                "owncdn":
+                                    {
+                                    "description": "Indicates if the hosting provider offers its own CDN (Content Delivery Network) solution, which can greatly improve website load times for visitors from different geographical locations.",
+                                    "type": "boolean"
+                                    }
+                                },
+                            "type": "object"
+                            },
+                        "datacenter":
+                            {
+                            "properties":
+                                {
+                                "countries":
+                                    {
+                                    "items":
+                                        {
+                                        "description": "Lists the countries where the hosting provider's data centers are located. This information is crucial for understanding the geographical distribution of the provider's infrastructure and can affect website latency and compliance with regional regulations.",
+                                        "enum":
+                                            [
+                                            "AD",
+                                            "AE",
+                                            "AF",
+                                            "AG",
+                                            "AI",
+                                            "AL",
+                                            "AM",
+                                            "AO",
+                                            "AQ",
+                                            "AR",
+                                            "AS",
+                                            "AT",
+                                            "AU",
+                                            "AW",
+                                            "AX",
+                                            "AZ",
+                                            "BA",
+                                            "BB",
+                                            "BD",
+                                            "BE",
+                                            "BF",
+                                            "BG",
+                                            "BH",
+                                            "BI",
+                                            "BJ",
+                                            "BL",
+                                            "BM",
+                                            "BN",
+                                            "BO",
+                                            "BQ",
+                                            "BR",
+                                            "BS",
+                                            "BT",
+                                            "BV",
+                                            "BW",
+                                            "BY",
+                                            "BZ",
+                                            "CA",
+                                            "CC",
+                                            "CD",
+                                            "CF",
+                                            "CG",
+                                            "CH",
+                                            "CI",
+                                            "CK",
+                                            "CL",
+                                            "CM",
+                                            "CN",
+                                            "CO",
+                                            "CR",
+                                            "CU",
+                                            "CV",
+                                            "CW",
+                                            "CX",
+                                            "CY",
+                                            "CZ",
+                                            "DE",
+                                            "DJ",
+                                            "DK",
+                                            "DM",
+                                            "DO",
+                                            "DZ",
+                                            "EC",
+                                            "EE",
+                                            "EG",
+                                            "EH",
+                                            "ER",
+                                            "ES",
+                                            "ET",
+                                            "FI",
+                                            "FJ",
+                                            "FK",
+                                            "FM",
+                                            "FO",
+                                            "FR",
+                                            "GA",
+                                            "GB",
+                                            "GD",
+                                            "GE",
+                                            "GF",
+                                            "GG",
+                                            "GH",
+                                            "GI",
+                                            "GL",
+                                            "GM",
+                                            "GN",
+                                            "GP",
+                                            "GQ",
+                                            "GR",
+                                            "GS",
+                                            "GT",
+                                            "GU",
+                                            "GW",
+                                            "GY",
+                                            "HK",
+                                            "HM",
+                                            "HN",
+                                            "HR",
+                                            "HT",
+                                            "HU",
+                                            "ID",
+                                            "IE",
+                                            "IL",
+                                            "IM",
+                                            "IN",
+                                            "IO",
+                                            "IQ",
+                                            "IR",
+                                            "IS",
+                                            "IT",
+                                            "JE",
+                                            "JM",
+                                            "JO",
+                                            "JP",
+                                            "KE",
+                                            "KG",
+                                            "KH",
+                                            "KI",
+                                            "KM",
+                                            "KN",
+                                            "KP",
+                                            "KR",
+                                            "KW",
+                                            "KY",
+                                            "KZ",
+                                            "LA",
+                                            "LB",
+                                            "LC",
+                                            "LI",
+                                            "LK",
+                                            "LR",
+                                            "LS",
+                                            "LT",
+                                            "LU",
+                                            "LV",
+                                            "LY",
+                                            "MA",
+                                            "MC",
+                                            "MD",
+                                            "ME",
+                                            "MF",
+                                            "MG",
+                                            "MH",
+                                            "MK",
+                                            "ML",
+                                            "MM",
+                                            "MN",
+                                            "MO",
+                                            "MP",
+                                            "MQ",
+                                            "MR",
+                                            "MS",
+                                            "MT",
+                                            "MU",
+                                            "MV",
+                                            "MW",
+                                            "MX",
+                                            "MY",
+                                            "MZ",
+                                            "NA",
+                                            "NC",
+                                            "NE",
+                                            "NF",
+                                            "NG",
+                                            "NI",
+                                            "NL",
+                                            "NO",
+                                            "NP",
+                                            "NR",
+                                            "NU",
+                                            "NZ",
+                                            "OM",
+                                            "PA",
+                                            "PE",
+                                            "PF",
+                                            "PG",
+                                            "PH",
+                                            "PK",
+                                            "PL",
+                                            "PM",
+                                            "PN",
+                                            "PR",
+                                            "PS",
+                                            "PT",
+                                            "PW",
+                                            "PY",
+                                            "QA",
+                                            "RE",
+                                            "RO",
+                                            "RS",
+                                            "RU",
+                                            "RW",
+                                            "SA",
+                                            "SB",
+                                            "SC",
+                                            "SD",
+                                            "SE",
+                                            "SG",
+                                            "SH",
+                                            "SI",
+                                            "SJ",
+                                            "SK",
+                                            "SL",
+                                            "SM",
+                                            "SN",
+                                            "SO",
+                                            "SR",
+                                            "SS",
+                                            "ST",
+                                            "SV",
+                                            "SX",
+                                            "SY",
+                                            "SZ",
+                                            "TC",
+                                            "TD",
+                                            "TF",
+                                            "TG",
+                                            "TH",
+                                            "TJ",
+                                            "TK",
+                                            "TL",
+                                            "TM",
+                                            "TN",
+                                            "TO",
+                                            "TR",
+                                            "TT",
+                                            "TV",
+                                            "TW",
+                                            "TZ",
+                                            "UA",
+                                            "UG",
+                                            "UM",
+                                            "US",
+                                            "UY",
+                                            "UZ",
+                                            "VA",
+                                            "VC",
+                                            "VE",
+                                            "VG",
+                                            "VI",
+                                            "VN",
+                                            "VU",
+                                            "WF",
+                                            "WS",
+                                            "YE",
+                                            "YT",
+                                            "ZA",
+                                            "ZM",
+                                            "ZW"
+                                            ],
+                                        "type": "string"
+                                        },
+                                    "type": "array"
+                                    },
+                                "datastored":
+                                    {
+                                    "items":
+                                        {
+                                        "description": "Enumerates the countries where the hosting provider stores its clients' data. This detail is important for clients concerned with data sovereignty and compliance with local data protection laws.",
+                                        "enum":
+                                            [
+                                            "AD",
+                                            "AE",
+                                            "AF",
+                                            "AG",
+                                            "AI",
+                                            "AL",
+                                            "AM",
+                                            "AO",
+                                            "AQ",
+                                            "AR",
+                                            "AS",
+                                            "AT",
+                                            "AU",
+                                            "AW",
+                                            "AX",
+                                            "AZ",
+                                            "BA",
+                                            "BB",
+                                            "BD",
+                                            "BE",
+                                            "BF",
+                                            "BG",
+                                            "BH",
+                                            "BI",
+                                            "BJ",
+                                            "BL",
+                                            "BM",
+                                            "BN",
+                                            "BO",
+                                            "BQ",
+                                            "BR",
+                                            "BS",
+                                            "BT",
+                                            "BV",
+                                            "BW",
+                                            "BY",
+                                            "BZ",
+                                            "CA",
+                                            "CC",
+                                            "CD",
+                                            "CF",
+                                            "CG",
+                                            "CH",
+                                            "CI",
+                                            "CK",
+                                            "CL",
+                                            "CM",
+                                            "CN",
+                                            "CO",
+                                            "CR",
+                                            "CU",
+                                            "CV",
+                                            "CW",
+                                            "CX",
+                                            "CY",
+                                            "CZ",
+                                            "DE",
+                                            "DJ",
+                                            "DK",
+                                            "DM",
+                                            "DO",
+                                            "DZ",
+                                            "EC",
+                                            "EE",
+                                            "EG",
+                                            "EH",
+                                            "ER",
+                                            "ES",
+                                            "ET",
+                                            "FI",
+                                            "FJ",
+                                            "FK",
+                                            "FM",
+                                            "FO",
+                                            "FR",
+                                            "GA",
+                                            "GB",
+                                            "GD",
+                                            "GE",
+                                            "GF",
+                                            "GG",
+                                            "GH",
+                                            "GI",
+                                            "GL",
+                                            "GM",
+                                            "GN",
+                                            "GP",
+                                            "GQ",
+                                            "GR",
+                                            "GS",
+                                            "GT",
+                                            "GU",
+                                            "GW",
+                                            "GY",
+                                            "HK",
+                                            "HM",
+                                            "HN",
+                                            "HR",
+                                            "HT",
+                                            "HU",
+                                            "ID",
+                                            "IE",
+                                            "IL",
+                                            "IM",
+                                            "IN",
+                                            "IO",
+                                            "IQ",
+                                            "IR",
+                                            "IS",
+                                            "IT",
+                                            "JE",
+                                            "JM",
+                                            "JO",
+                                            "JP",
+                                            "KE",
+                                            "KG",
+                                            "KH",
+                                            "KI",
+                                            "KM",
+                                            "KN",
+                                            "KP",
+                                            "KR",
+                                            "KW",
+                                            "KY",
+                                            "KZ",
+                                            "LA",
+                                            "LB",
+                                            "LC",
+                                            "LI",
+                                            "LK",
+                                            "LR",
+                                            "LS",
+                                            "LT",
+                                            "LU",
+                                            "LV",
+                                            "LY",
+                                            "MA",
+                                            "MC",
+                                            "MD",
+                                            "ME",
+                                            "MF",
+                                            "MG",
+                                            "MH",
+                                            "MK",
+                                            "ML",
+                                            "MM",
+                                            "MN",
+                                            "MO",
+                                            "MP",
+                                            "MQ",
+                                            "MR",
+                                            "MS",
+                                            "MT",
+                                            "MU",
+                                            "MV",
+                                            "MW",
+                                            "MX",
+                                            "MY",
+                                            "MZ",
+                                            "NA",
+                                            "NC",
+                                            "NE",
+                                            "NF",
+                                            "NG",
+                                            "NI",
+                                            "NL",
+                                            "NO",
+                                            "NP",
+                                            "NR",
+                                            "NU",
+                                            "NZ",
+                                            "OM",
+                                            "PA",
+                                            "PE",
+                                            "PF",
+                                            "PG",
+                                            "PH",
+                                            "PK",
+                                            "PL",
+                                            "PM",
+                                            "PN",
+                                            "PR",
+                                            "PS",
+                                            "PT",
+                                            "PW",
+                                            "PY",
+                                            "QA",
+                                            "RE",
+                                            "RO",
+                                            "RS",
+                                            "RU",
+                                            "RW",
+                                            "SA",
+                                            "SB",
+                                            "SC",
+                                            "SD",
+                                            "SE",
+                                            "SG",
+                                            "SH",
+                                            "SI",
+                                            "SJ",
+                                            "SK",
+                                            "SL",
+                                            "SM",
+                                            "SN",
+                                            "SO",
+                                            "SR",
+                                            "SS",
+                                            "ST",
+                                            "SV",
+                                            "SX",
+                                            "SY",
+                                            "SZ",
+                                            "TC",
+                                            "TD",
+                                            "TF",
+                                            "TG",
+                                            "TH",
+                                            "TJ",
+                                            "TK",
+                                            "TL",
+                                            "TM",
+                                            "TN",
+                                            "TO",
+                                            "TR",
+                                            "TT",
+                                            "TV",
+                                            "TW",
+                                            "TZ",
+                                            "UA",
+                                            "UG",
+                                            "UM",
+                                            "US",
+                                            "UY",
+                                            "UZ",
+                                            "VA",
+                                            "VC",
+                                            "VE",
+                                            "VG",
+                                            "VI",
+                                            "VN",
+                                            "VU",
+                                            "WF",
+                                            "WS",
+                                            "YE",
+                                            "YT",
+                                            "ZA",
+                                            "ZM",
+                                            "ZW"
+                                            ],
+                                        "type": "string"
+                                        },
+                                    "type": "array"
+                                    },
+                                "privacycompliance":
+                                    {
+                                    "items":
+                                        {
+                                        "description": "xxSpecifies the privacy and data protection regulations with which the hosting provider complies. Examples include GDPR for data protection in the European Union, CCPA for privacy in California, USA, and others. Compliance with these regulations ensures that the provider adheres to legal standards for data privacy and protection.xxx",
+                                        "enum":
+                                            [
+                                            "ccpa",
+                                            "coppa",
+                                            "gdpr",
+                                            "lgpd",
+                                            "pdpa",
+                                            "pipl",
+                                            "popia",
+                                            "other"
+                                            ],
+                                        "type": "string"
+                                        },
+                                    "type": "array"
+                                    }
+                                },
+                            "type": "object"
+                            },
+                        "ipaddress":
+                            {
+                            "properties":
+                                {
+                                "additionalipv4":
+                                    {
+                                    "description": "Specifies if additional IPv4 addresses are available upon request or included in the plan.",
+                                    "type": "boolean"
+                                    },
+                                "additionalipv6":
+                                    {
+                                    "description": " Indicates if extra IPv6 addresses can be allocated to your hosting account, useful for large-scale deployments.",
+                                    "type": "boolean"
+                                    },
+                                "ipv4":
+                                    {
+                                    "description": "A boolean indicating if an IPv4 address is provided with the hosting service.",
+                                    "type": "boolean"
+                                    },
+                                "ipv6":
+                                    {
+                                    "description": "States whether IPv6 support is available, which is essential for future-proofing services and enhancing connectivity.",
+                                    "type": "boolean"
+                                    }
+                                },
+                            "type": "object"
+                            },
+                        "objectcacheoptions":
+                            {
+                            "items":
+                                {
+                                "description": "Lists the object caching options available, which can include in-memory data storage systems like Redis and Memcached. Object caching helps improve WordPress performance by storing data in memory for faster retrieval.",
+                                "enum":
+                                    [
+                                    "redis",
+                                    "memcached",
+                                    "own",
+                                    "others"
+                                    ],
+                                "type": "string"
+                                },
+                            "type": "array"
+                            },
+                        "performanceserverside":
+                            {
+                            "properties":
+                                {
+                                "brotli":
+                                    {
+                                    "description": "A boolean indicating whether Brotli compression is supported. Brotli is a newer compression algorithm that can provide better compression ratios than GZIP.",
+                                    "type": "boolean"
+                                    },
+                                "gzip":
+                                    {
+                                    "description": "Specifies if GZIP compression is available, a method for reducing the size of the files sent from your server to increase the speed to which they are transferred to the browser.",
+                                    "type": "boolean"
+                                    },
+                                "httpversions":
+                                    {
+                                    "items":
+                                        {
+                                        "description": " Lists the HTTP protocol versions supported by the hosting server, impacting the speed and security of data transfer between the server and clients.",
+                                        "enum":
+                                            [
+                                            "1.0",
+                                            "1.1",
+                                            "2.0",
+                                            "3.0"
+                                            ],
+                                        "type": "string"
+                                        },
+                                    "type": "array"
+                                    }
+                                },
+                            "type": "object"
+                            },
+                        "phpextensions":
+                            {
+                            "items":
+                                {
+                                "description": "Enumerates the PHP extensions available with the hosting plan. PHP extensions extend the functionality of PHP for more comprehensive web development capabilities.",
+                                "enum":
+                                    [
+                                    "json",
+                                    "mysqli",
+                                    "mysqlnd",
+                                    "curl",
+                                    "dom",
+                                    "exif",
+                                    "fileinfo",
+                                    "hash",
+                                    "igbinary",
+                                    "imagick",
+                                    "intl",
+                                    "mbstring",
+                                    "openssl",
+                                    "pcre",
+                                    "xml",
+                                    "zip",
+                                    "apcu",
+                                    "memcached",
+                                    "opcache",
+                                    "redis",
+                                    "bc",
+                                    "filter",
+                                    "image",
+                                    "iconv",
+                                    "shmop",
+                                    "simplexml",
+                                    "sodium",
+                                    "xmlreader",
+                                    "zlib",
+                                    "ssh2",
+                                    "ftp",
+                                    "sockets"
+                                    ],
+                                "type": "string"
+                                },
+                            "type": "array"
+                            },
+                        "phpversions":
+                            {
+                            "items":
+                                {
+                                "description": "Lists the PHP versions supported by the hosting service. PHP is a widely-used open-source scripting language that is especially suited for web development.",
+                                "enum":
+                                    [
+                                    "5.0",
+                                    "5.1",
+                                    "5.2",
+                                    "5.3",
+                                    "5.4",
+                                    "5.5",
+                                    "5.6",
+                                    "7.0",
+                                    "7.1",
+                                    "7.2",
+                                    "7.3",
+                                    "7.4",
+                                    "8.0",
+                                    "8.1",
+                                    "8.2",
+                                    "8.3",
+                                    "8.4"
+                                    ],
+                                "type": "string"
+                                },
+                            "type": "array"
+                            },
+                        "serverupdates":
+                            {
+                            "properties":
+                                {
+                                "automaticdatabasebupdates":
+                                    {
+                                    "description": "Reveals if database software updates are automatically handled, maintaining performance and security without manual intervention.",
+                                    "type": "boolean"
+                                    },
+                                "automatickernelupdates":
+                                    {
+                                    "description": "Indicates whether the hosting service automatically updates the server kernel. Kernel updates are crucial for security and stability.",
+                                    "type": "boolean"
+                                    },
+                                "automaticphpupdates":
+                                    {
+                                    "description": " Specifies if the hosting plan includes automatic updates for PHP, ensuring the latest features and security patches are applied.",
+                                    "type": "boolean"
+                                    }
+                                },
+                            "type": "object"
+                            },
+                        "sqloptions":
+                            {
+                            "items":
+                                {
+                                "description": "Details the SQL database versions supported by the hosting environment. This includes different versions of MySQL and MariaDB, allowing for a wide range of database management options.",
+                                "enum":
+                                    [
+                                    "mysql-5.5",
+                                    "mysql-5.6",
+                                    "mysql-5.7",
+                                    "mysql-8.0",
+                                    "mysql-8.1",
+                                    "mysql-8.2",
+                                    "mysql-8.3",
+                                    "mariadb-5.5",
+                                    "mariadb-10.0",
+                                    "mariadb-10.1",
+                                    "mariadb-10.2",
+                                    "mariadb-10.3",
+                                    "mariadb-10.4",
+                                    "mariadb-10.5",
+                                    "mariadb-10.6",
+                                    "mariadb-10.7",
+                                    "mariadb-10.8",
+                                    "mariadb-10.9",
+                                    "mariadb-10.10",
+                                    "mariadb-10.11",
+                                    "mariadb-11.0",
+                                    "mariadb-11.1",
+                                    "mariadb-11.2",
+                                    "mariadb-11.3",
+                                    "other"
+                                    ],
+                                "type": "string"
+                                },
+                            "type": "array"
+                            },
+                        "support":
+                            {
+                            "properties":
+                                {
+                                "availability":
+                                    {
+                                    "description": "Details the availability schedule of the support team, which can vary from 24/7 support to business hours or specific days of the week. This information helps customers know when they can expect to receive help for their inquiries or issues.",
+                                    "enum":
+                                        [
+                                        "24-7",
+                                        "business-days",
+                                        "every-day"
+                                        ],
+                                    "type": "string"
+                                    },
+                                "channels":
+                                    {
+                                    "items":
+                                        {
+                                        "description": "Lists the various support channels through which customers can contact the hosting provider. These can include online forms, live chat, instant messaging, toll-free phone support, paid phone support, social media platforms, and community forums. This diversity allows customers to choose their preferred method of communication for support issues.",
+                                        "enum":
+                                            [
+                                            "form",
+                                            "chat",
+                                            "instant-messaging",
+                                            "phone-free",
+                                            "phone-paid",
+                                            "social",
+                                            "forum"
+                                            ],
+                                        "type": "string"
+                                        },
+                                    "type": "array"
+                                    },
+                                "community":
+                                    {
+                                    "description": "The URL to the community forum or platform where users can engage with each other, ask questions, share solutions, and discuss topics related to the hosting services. Community forums are a valuable resource for peer-to-peer support and building a sense of belonging among the provider's customers.",
+                                    "format": "uri",
+                                    "type": "string"
+                                    },
+                                "knowledgebase":
+                                    {
+                                    "description": "Provides the URL to the hosting provider's knowledgebase. This online repository contains articles, guides, and FAQs to help customers troubleshoot issues on their own and learn more about using the hosting services effectively.",
+                                    "format": "uri",
+                                    "type": "string"
+                                    },
+                                "languages":
+                                    {
+                                    "items":
+                                        {
+                                        "description": "Specifies the languages in which support is available, ensuring that customers can receive assistance in their preferred language. This is crucial for a hosting provider with a global customer base, as it enhances the support experience and accessibility.",
+                                        "type": "string"
+                                        },
+                                    "type": "array"
+                                    }
+                                },
+                            "type": "object"
+                            },
+                        "systempackages":
+                            {
+                            "items":
+                                {
+                                "description": "Specifies the system packages installed by default with the hosting service. These packages can include essential tools and libraries necessary for web development and site management.",
+                                "enum":
+                                    [
+                                    "curl",
+                                    "ghostscript",
+                                    "imagemagick",
+                                    "openssl"
+                                    ],
+                                "type": "string"
+                                },
+                            "type": "array"
+                            }
+                        },
+                    "required":
+                        [
+                        "phpversions",
+                        "phpextensions",
+                        "sqloptions",
+                        "objectcacheoptions",
+                        "serverupdates",
+                        "ipaddress",
+                        "performanceserverside",
+                        "cdn",
+                        "datacenter",
+                        "support"
+                        ],
+                    "type": "object"
+                    },
+                "management":
+                    {
+                    "description": "Indicates whether the hosting plan is managed or unmanaged, affecting the level of support and services provided.",
+                    "enum":
+                        [
+                        "managed",
+                        "unmanaged",
+                        "root-access"
+                        ],
+                    "type": "string"
+                    },
+                "name":
+                    {
+                    "description": "The name of the hosting product or plan.",
+                    "type": "string"
+                    },
+                "performance":
+                    {
+                    "properties":
+                        {
+                        "averageUptime":
+                            {
+                            "description": "Represents the average percentage of time the hosting service is operational and accessible online. Uptime is a critical measure of reliability, with 99.9% being the industry standard for most services.",
+                            "type": "string"
+                            },
+                        "pageLoadSpeed":
+                            {
+                            "description": "Indicates the average time it takes for pages hosted on the provider's servers to load. Faster page load speeds improve user experience and are beneficial for search engine optimization.",
+                            "type": "string"
+                            }
+                        },
+                    "type": "object"
+                    },
+                "price":
+                    {
+                    "description": "(NEEDS REVIEW) A general price range for the hosting plan, represented by one to five dollar signs ($ to $$$$$) indicating increasing cost.",
+                    "enum":
+                        [
+                        "$",
+                        "$$",
+                        "$$$",
+                        "$$$$",
+                        "$$$$$"
+                        ],
+                    "type": "string"
+                    },
+                "security":
+                    {
+                    "properties":
+                        {
+                        "certificatetype":
+                            {
+                            "description": "The type of security certificate provided, such as Let's Encrypt or other.",
+                            "enum":
+                                [
+                                "letsencrypt",
+                                "other"
+                                ],
+                            "type": "string"
+                            },
+                        "detectiontools":
+                            {
+                            "description": "A list of security tools used for detecting vulnerabilities.",
+                            "items":
+                                {
+                                "enum":
+                                    [
+                                    "none",
+                                    "patchstack",
+                                    "wordfence",
+                                    "wpscan",
+                                    "wpvulnerability",
+                                    "others"
+                                    ],
+                                "type": "string"
+                                },
+                            "type": "array"
+                            },
+                        "firewalloptions":
+                            {
+                            "description": "A list of the firewall options or technologies used.",
+                            "items":
+                                {
+                                "enum":
+                                    [
+                                    "none",
+                                    "ufw",
+                                    "iptables",
+                                    "firewalld",
+                                    "nftables",
+                                    "cisco-asa",
+                                    "palo-alto",
+                                    "other"
+                                    ],
+                                "type": "string"
+                                },
+                            "type": "array"
+                            },
+                        "hsts":
+                            {
+                            "description": "A boolean indicating whether HTTP Strict Transport Security is enforced.",
+                            "type": "boolean"
+                            },
+                        "intrusiondetectionsystem":
+                            {
+                            "properties":
+                                {
+                                "description": "Details about the intrusion detection system, including whether it's enabled and what type is used.",
+                                "enabled":
+                                    {
+                                    "type": "boolean"
+                                    },
+                                "type":
+                                    {
+                                    "enum":
+                                        [
+                                        "none",
+                                        "snort",
+                                        "suricata",
+                                        "ossec",
+                                        "other"
+                                        ],
+                                    "type": "string"
+                                    }
+                                },
+                            "type": "object"
+                            },
+                        "malwarescanning":
+                            {
+                            "description": "A boolean value indicating whether malware scanning is provided.",
+                            "type": "boolean"
+                            },
+                        "securitycertificate":
+                            {
+                            "description": "A boolean value indicating whether a security certificate is included with the hosting plan.",
+                            "type": "boolean"
+                            },
+                        "tlsversions":
+                            {
+                            "description": "A list of supported TLS versions, ensuring secure connections.",
+                            "items":
+                                {
+                                "enum":
+                                    [
+                                    "1.0",
+                                    "1.1",
+                                    "1.2",
+                                    "1.3"
+                                    ],
+                                "type": "string"
+                                },
+                            "type": "array"
+                            }
+                        },
+                    "required":
+                        [
+                        "securityCertificate",
+                        "certificateType",
+                        "tlsVersions",
+                        "hsts",
+                        "detectionTools",
+                        "firewalloptions",
+                        "malwarescanning",
+                        "intrusiondetectionsystem"
+                        ],
+                    "type": "object"
+                    },
+                "sustainability":
+                    {
+                    "properties":
+                        {
+                        "carbonNeutrality":
+                            {
+                            "description": "Indicates whether the hosting provider operates on a carbon-neutral basis, either through reducing emissions or purchasing carbon offsets. This reflects the company's commitment to minimizing its environmental impact.",
+                            "type": "boolean"
+                            },
+                        "energySource":
+                            {
+                            "description": "Describes the primary source of energy used by the hosting provider's data centers. This could include renewable sources like solar or wind, traditional sources like coal or natural gas, or a mix. This information is important for customers looking for environmentally friendly hosting options.",
+                            "type": "string"
+                            }
+                        },
+                    "type": "object"
+                    },
+                "urlproduct":
+                    {
+                    "description": "The URL to the specific product or plan's webpage.",
+                    "format": "uri",
+                    "type": "string"
+                    },
+                "wordpressdevelopment":
+                    {
+                    "properties":
+                        {
+                        "dnsmanagement":
+                            {
+                            "description": "Details whether the hosting provider offers DNS (Domain Name System) management capabilities, allowing customers to manage domain records directly or if they must use external services. DNS management is crucial for directing traffic to your website and configuring subdomains and email services.",
+                            "enum":
+                                [
+                                "manageable",
+                                "external"
+                                ],
+                            "type": "string"
+                            },
+                        "environmentsandmigration":
+                            {
+                            "description": "Lists the supported environments for WordPress development, such as staging (for testing), production (live environment), and local (development on a local machine). Also refers to the provider\u2019s support for migrating WordPress sites between different environments.",
+                            "items":
+                                {
+                                "enum":
+                                    [
+                                    "staging",
+                                    "production",
+                                    "local"
+                                    ],
+                                "type": "string"
+                                },
+                            "type": "array"
+                            },
+                        "serveraccess":
+                            {
+                            "items":
+                                {
+                                "description": "Enumerates the types of server access provided, such as SSH (Secure Shell) for secure command-line access, SFTP (Secure File Transfer Protocol) for file transfers, WP-CLI (WordPress Command Line Interface) for managing WordPress sites, and phpMyAdmin for database management. These tools give developers flexibility in managing and deploying WordPress sites.",
+                                "enum":
+                                    [
+                                    "SSH",
+                                    "SFTP",
+                                    "WP-CLI",
+                                    "phpMyAdmin"
+                                    ],
+                                "type": "string"
+                                },
+                            "type": "array"
+                            },
+                        "wordpressinstallation":
+                            {
+                            "description": "Specifies the types of WordPress installation processes supported by the hosting provider, including manual installation by the user, automatic installation by the provider, or a hybrid approach that involves both.",
+                            "enum":
+                                [
+                                "manual",
+                                "automatic",
+                                "hybrid"
+                                ],
+                            "type": "string"
+                            }
+                        },
+                    "required":
+                        [
+                        "wordpressinstallation",
+                        "environmentsandmigration",
+                        "serveraccess",
+                        "dnsmanagement"
+                        ],
+                    "type": "object"
+                    }
+                },
+            "required":
+                [
+                "name",
+                "category",
+                "management",
+                "urlproduct",
+                "controlpanel",
+                "price",
+                "security",
+                "environment"
+                ],
+            "type": "object"
+            },
+        "type": "array"
+        }
+    },
+"required":
+    [
     "company",
     "products"
-  ]
+    ],
+"title": "Hosting Provider",
+"type": "object"
 }
