@@ -1452,7 +1452,7 @@
                                     },
                                 "items":
                                     {
-                                "description": "Specifies the types of WordPress installation processes supported by the hosting provider, including manual installation by the user, automatic installation by the provider, or a hybrid approach that involves both.",
+                                    "description": "Specifies the types of WordPress installation processes supported by the hosting provider, including manual installation by the user, automatic installation by the provider, or a hybrid approach that involves both.",
                                     "enum":
                                         [
                                         "manual",
@@ -1463,8 +1463,8 @@
                                     }
                                 },
                             "type": "object"
+                            }
                         },
-                    },
                     "required":
                         [
                         "dnsmanagement",
