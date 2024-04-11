@@ -154,31 +154,32 @@
                             },
                         "panel":
                             {
-                            "items": {
+                            "items":
+                                {
                                 "description": "The control panel provided with the hosting plan, for site management purposes.",
                                 "enum":
-                                [
-                                "aapanel",
-                                "ajenti",
-                                "centos",
-                                "cloudpanel",
-                                "cpanel",
-                                "directadmin",
-                                "froxlor",
-                                "hestia",
-                                "interworx",
-                                "ispconfig",
-                                "plesk",
-                                "sentora",
-                                "vesta",
-                                "virtualmin",
-                                "own-panel",
-                                "other"
-                                ],
-                            "type": "string"
-                            },
+                                    [
+                                    "aapanel",
+                                    "ajenti",
+                                    "centos",
+                                    "cloudpanel",
+                                    "cpanel",
+                                    "directadmin",
+                                    "froxlor",
+                                    "hestia",
+                                    "interworx",
+                                    "ispconfig",
+                                    "plesk",
+                                    "sentora",
+                                    "vesta",
+                                    "virtualmin",
+                                    "own-panel",
+                                    "other"
+                                    ],
+                                "type": "string"
+                                },
                             "type": "array"
-                        }
+                            }
                         },
                     "type": "object"
                     },
@@ -801,17 +802,12 @@
                             {
                             "properties":
                                 {
-                                "enabled":
-                                    {
-                                    "type": "boolean"
-                                    },
                                 "cache":
                                     {
                                     "description": "Lists the object caching options available, which can include in-memory data storage systems like Redis and Memcached. Object caching helps improve WordPress performance by storing data in memory for faster retrieval.",
-
-                               "items": {
-                                  "type": "array",
-                                    "enum":
+                                    "items":
+                                        {
+                                        "enum":
                                             [
                                             "redis",
                                             "memcached",
@@ -821,6 +817,10 @@
                                         "type": "string"
                                         }
                                     },
+                                "enabled":
+                                    {
+                                    "type": "boolean"
+                                    }
                                 },
                             "type": "object"
                             },
@@ -1034,8 +1034,8 @@
                     },
                 "management":
                     {
-                    "items": {
-                      "type": "array",
+                    "items":
+                        {
                         "description": "Indicates whether the hosting plan is managed or unmanaged, affecting the level of support and services provided.",
                         "enum":
                             [
@@ -1044,7 +1044,7 @@
                             "root-access"
                             ],
                         "type": "string"
-                    }
+                        }
                     },
                 "name":
                     {
@@ -1087,31 +1087,27 @@
                         {
                         "certificateprovider":
                             {
-
-                        "provider": {
-                          "type": "array",
-
-                            "description": "The type of security certificate provided, such as Let's Encrypt or other.",
-                            "enum":
-                                [
-                                "aws",
-                                "cloudflare",
-                                "digicert",
-                                "entrust",
-                                "geotrust",
-                                "globalsign",
-                                "godaddy",
-                                "letsencrypt",
-                                "rapidssl",
-                                "sectigo",
-                                "symantec",
-                                "thawte",
-                                "other"
-                                ],
-                            "type": "string"
-
-                        }
-
+                            "provider":
+                                {
+                                "description": "The type of security certificate provided, such as Let's Encrypt or other.",
+                                "enum":
+                                    [
+                                    "aws",
+                                    "cloudflare",
+                                    "digicert",
+                                    "entrust",
+                                    "geotrust",
+                                    "globalsign",
+                                    "godaddy",
+                                    "letsencrypt",
+                                    "rapidssl",
+                                    "sectigo",
+                                    "symantec",
+                                    "thawte",
+                                    "other"
+                                    ],
+                                "type": "string"
+                                }
                             },
                         "detectiontools":
                             {
@@ -1123,20 +1119,19 @@
                                     },
                                 "tool":
                                     {
-
-                                "items": {
-                                  "type": "array",
-                                    "description": "A list of security tools used for detecting vulnerabilities.",
-                                    "enum":
-                                        [
-                                        "patchstack",
-                                        "wordfence",
-                                        "wpscan",
-                                        "wpvulnerability",
-                                        "others"
-                                        ],
-                                    "type": "string"
-                                    }
+                                    "items":
+                                        {
+                                        "description": "A list of security tools used for detecting vulnerabilities.",
+                                        "enum":
+                                            [
+                                            "patchstack",
+                                            "wordfence",
+                                            "wpscan",
+                                            "wpvulnerability",
+                                            "others"
+                                            ],
+                                        "type": "string"
+                                        }
                                     }
                                 },
                             "type": "object"
@@ -1151,23 +1146,22 @@
                                     },
                                 "firewall":
                                     {
-
-                                    "items": {
-                                      "type": "array",
-                                    "description": "A list of the firewall options or technologies used.",
-                                    "enum":
-                                        [
-                                        "none",
-                                        "ufw",
-                                        "iptables",
-                                        "firewalld",
-                                        "nftables",
-                                        "cisco-asa",
-                                        "palo-alto",
-                                        "other"
-                                        ],
-                                    "type": "string"
-                                    }
+                                    "items":
+                                        {
+                                        "description": "A list of the firewall options or technologies used.",
+                                        "enum":
+                                            [
+                                            "none",
+                                            "ufw",
+                                            "iptables",
+                                            "firewalld",
+                                            "nftables",
+                                            "cisco-asa",
+                                            "palo-alto",
+                                            "other"
+                                            ],
+                                        "type": "string"
+                                        }
                                     }
                                 },
                             "type": "object"
@@ -1187,19 +1181,19 @@
                                     },
                                 "system":
                                     {
-                                "items": {
-                                  "type": "array",
-                                  "description": "Details about the intrusion detection system, including whether it's enabled and what type is used.",
-                                    "enum":
-                                        [
-                                        "none",
-                                        "snort",
-                                        "suricata",
-                                        "ossec",
-                                        "other"
-                                        ],
-                                    "type": "string"
-                                    }
+                                    "items":
+                                        {
+                                        "description": "Details about the intrusion detection system, including whether it's enabled and what type is used.",
+                                        "enum":
+                                            [
+                                            "none",
+                                            "snort",
+                                            "suricata",
+                                            "ossec",
+                                            "other"
+                                            ],
+                                        "type": "string"
+                                        }
                                     }
                                 },
                             "type": "object"
@@ -1250,18 +1244,17 @@
                         {
                         "availability":
                             {
-
-                        "items": {
-                          "type": "array",
-                            "description": "Details the availability schedule of the support team, which can vary from 24/7 support to business hours or specific days of the week. This information helps customers know when they can expect to receive help for their inquiries or issues.",
-                            "enum":
-                                [
-                                "24-7",
-                                "business-days",
-                                "every-day"
-                                ],
-                            "type": "string"
-                        }
+                            "items":
+                                {
+                                "description": "Details the availability schedule of the support team, which can vary from 24/7 support to business hours or specific days of the week. This information helps customers know when they can expect to receive help for their inquiries or issues.",
+                                "enum":
+                                    [
+                                    "24-7",
+                                    "business-days",
+                                    "every-day"
+                                    ],
+                                "type": "string"
+                                }
                             },
                         "channels":
                             {
@@ -1389,26 +1382,25 @@
                             },
                         "energysource":
                             {
-                              
-                        "items": {
-                          "type": "array",                              
-                            "description": "Describes the primary source of energy used by the hosting provider's data centers. This could include renewable sources like solar or wind, traditional sources like coal or natural gas, or a mix. This information is important for customers looking for environmentally friendly hosting options.",
-                            "enum":
-                                [
-                                "biomass",
-                                "diesel",
-                                "fuel-cell",
-                                "hydro",
-                                "nuclear",
-                                "gas",
-                                "geothermal",
-                                "grid",
-                                "solar",
-                                "wind",
-                                "other"
-                                ],
-                            "type": "string"
-                            }
+                            "items":
+                                {
+                                "description": "Describes the primary source of energy used by the hosting provider's data centers. This could include renewable sources like solar or wind, traditional sources like coal or natural gas, or a mix. This information is important for customers looking for environmentally friendly hosting options.",
+                                "enum":
+                                    [
+                                    "biomass",
+                                    "diesel",
+                                    "fuel-cell",
+                                    "hydro",
+                                    "nuclear",
+                                    "gas",
+                                    "geothermal",
+                                    "grid",
+                                    "solar",
+                                    "wind",
+                                    "other"
+                                    ],
+                                "type": "string"
+                                }
                             }
                         },
                     "required":
@@ -1438,17 +1430,16 @@
                                     },
                                 "items":
                                     {
-
-        "management": {
-          "type": "array",
-                                    "description": "Details whether the hosting provider offers DNS (Domain Name System) management capabilities, allowing customers to manage domain records directly or if they must use external services. DNS management is crucial for directing traffic to your website and configuring subdomains and email services.",
-                                    "enum":
-                                        [
-                                        "manageable",
-                                        "external"
-                                        ],
-                                    "type": "string"
-                                    }
+                                    "management":
+                                        {
+                                        "description": "Details whether the hosting provider offers DNS (Domain Name System) management capabilities, allowing customers to manage domain records directly or if they must use external services. DNS management is crucial for directing traffic to your website and configuring subdomains and email services.",
+                                        "enum":
+                                            [
+                                            "manageable",
+                                            "external"
+                                            ],
+                                        "type": "string"
+                                        }
                                     }
                                 },
                             "type": "object"
@@ -1463,44 +1454,43 @@
                                     },
                                 "environment":
                                     {
-
-        "items": {
-          "type": "array",
-                                    "description": "Lists the supported environments for WordPress development, such as staging (for testing), production (live environment), and local (development on a local machine).",
-                                    "enum":
-                                        [
-                                        "staging",
-                                        "production",
-                                        "local"
-                                        ],
-                                    "type": "string"
-                                    }
+                                    "items":
+                                        {
+                                        "description": "Lists the supported environments for WordPress development, such as staging (for testing), production (live environment), and local (development on a local machine).",
+                                        "enum":
+                                            [
+                                            "staging",
+                                            "production",
+                                            "local"
+                                            ],
+                                        "type": "string"
+                                        }
                                     }
                                 },
                             "type": "object"
                             },
                         "serveraccess":
                             {
-
-        "access": {
-          "type": "array",
-                            "description": "Enumerates the types of server access provided, such as SSH (Secure Shell) for secure command-line access, SFTP (Secure File Transfer Protocol) for file transfers, WP-CLI (WordPress Command Line Interface) for managing WordPress sites, and phpMyAdmin for database management. These tools give developers flexibility in managing and deploying WordPress sites.",
-                            "items":
+                            "access":
                                 {
-                                "enum":
-                                    [
-                                    "adminer",
-                                    "control-panel",
-                                    "ftp",
-                                    "git",
-                                    "phpmyadmin",
-                                    "sftp",
-                                    "ssh",
-                                    "wp-cli"
-                                    ],
-                                "type": "string"
+                                "description": "Enumerates the types of server access provided, such as SSH (Secure Shell) for secure command-line access, SFTP (Secure File Transfer Protocol) for file transfers, WP-CLI (WordPress Command Line Interface) for managing WordPress sites, and phpMyAdmin for database management. These tools give developers flexibility in managing and deploying WordPress sites.",
+                                "items":
+                                    {
+                                    "enum":
+                                        [
+                                        "adminer",
+                                        "control-panel",
+                                        "ftp",
+                                        "git",
+                                        "phpmyadmin",
+                                        "sftp",
+                                        "ssh",
+                                        "wp-cli"
+                                        ],
+                                    "type": "string"
+                                    },
+                                "type": "array"
                                 }
-        }
                             },
                         "wordpressinstallation":
                             {
@@ -1512,18 +1502,17 @@
                                     },
                                 "installation":
                                     {
-
-        "items": {
-          "type": "array",
-                                    "description": "Specifies the types of WordPress installation processes supported by the hosting provider, including manual installation by the user, automatic installation by the provider, or a hybrid approach that involves both.",
-                                    "enum":
-                                        [
-                                        "manual",
-                                        "automatic",
-                                        "hybrid"
-                                        ],
-                                    "type": "string"
-                                    }
+                                    "items":
+                                        {
+                                        "description": "Specifies the types of WordPress installation processes supported by the hosting provider, including manual installation by the user, automatic installation by the provider, or a hybrid approach that involves both.",
+                                        "enum":
+                                            [
+                                            "manual",
+                                            "automatic",
+                                            "hybrid"
+                                            ],
+                                        "type": "string"
+                                        }
                                     }
                                 },
                             "type": "object"
