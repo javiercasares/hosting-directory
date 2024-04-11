@@ -120,13 +120,13 @@
 				</div>
 			</div>
 			<div class="tab-pane fade" id="shared-tab-pane" role="tabpanel" aria-labelledby="shared-tab" tabindex="1">
-				<h2 class="mt-2">Product: Shared hosting</h2>
+				<h2 class="mt-2">Product: shared hosting</h2>
 				<div class="mt-2">
 					<div class="form-check">
 						<input class="form-check-input" type="checkbox" value="1" id="shared_control" name="shared_control" aria-describedby="shared_control_help">
-						<label class="form-check-label" for="shared_control">The company offers Shared hosting</label>
+						<label class="form-check-label" for="shared_control">The company offers shared hosting for WordPress</label>
 					</div>
-					<div id="shared_control_help" class="form-text">Do you offer have Shared hosting as a product or service?</div>
+					<div id="shared_control_help" class="form-text">Does your company offer shared hosting as a product or service?</div>
 				</div>
 				<h3 class="mt-2">Control Panel</h3>
 				<div class="mt-2">
@@ -175,12 +175,751 @@
 					</select>
 					<div id="shared_controlpanel_panel_help" class="form-text"><em>[required]</em> The control panel provided with the hosting plan, for site management purposes.</div>
 				</div>
+				<h3 class="mt-2">Environment</h3>
+
+
+				<h4 class="mt-2">PHP</h4>
+				<h5 class="mt-2">PHP versions</h4>
+				<div class="mt-2">
+					<label for="shared_environment_phpversions" class="form-label">PHP versions</label>
+					<select class="form-select" multiple size="5" id="shared_environment_phpversions" name="shared_environment_phpversions" aria-describedby="shared_environment_phpversions_help" required aria-required="true">
+						<option value="84">PHP 8.4</option>
+						<option value="83">PHP 8.3</option>
+						<option value="82">PHP 8.2</option>
+						<option value="81">PHP 8.1</option>
+						<option value="80">PHP 8.0</option>
+						<option value="74">PHP 7.4</option>
+						<option value="73">PHP 7.3</option>
+						<option value="72">PHP 7.2</option>
+						<option value="71">PHP 7.1</option>
+						<option value="70">PHP 7.0</option>
+						<option value="56">PHP 5.6</option>
+						<option value="55">PHP 5.5</option>
+						<option value="54">PHP 5.4</option>
+						<option value="53">PHP 5.3</option>
+						<option value="52">PHP 5.2</option>
+						<option value="51">PHP 5.1</option>
+						<option value="50">PHP 5.0</option>
+					</select>
+					<div id="shared_environment_phpversions_help" class="form-text"><em>[required]</em> Lists the PHP versions supported by the hosting service. PHP is a widely-used open-source scripting language that is especially suited for web development.</div>
+				</div>
+
+				<h5 class="mt-2">PHP extensions</h4>
+				<div class="mt-2">
+					<label for="shared_environment_phpextensions" class="form-label">PHP extensions</label>
+					<select class="form-select" multiple size="5" id="shared_environment_phpextensions" name="shared_environment_phpextensions" aria-describedby="shared_environment_phpextensions_help" required aria-required="true">
+						<option value="apcu">apcu - APC User Cache</option>
+						<option value="bc">bc - BCMath Arbitrary Precision Mathematics</option>
+						<option value="curl">curl - Client URL Library</option>
+						<option value="dom">dom - Document Object Model</option>
+						<option value="exif">exif - Exchangeable image information</option>
+						<option value="fileinfo">fileinfo - File Information</option>
+						<option value="filter">filter - Data Filtering</option>
+						<option value="ftp">ftp - FTP</option>
+						<option value="gd">gd - Image Processing and GD</option>
+						<option value="hash">hash - HASH Message Digest Framework</option>
+						<option value="iconv">iconv - iconv</option>
+						<option value="igbinary">igbinary - Igbinary</option>
+						<option value="imagick">imagick - Image Processing (ImageMagick)</option>
+						<option value="intl">intl - Internationalization</option>
+						<option value="json">json - JavaScript Object Notation</option>
+						<option value="mbstring">mbstring - Multibyte String</option>
+						<option value="memcached">memcached - Memcached </option>
+						<option value="mysqli">mysqli - MySQL Improved Extension</option>
+						<option value="mysqlnd">mysqlnd - MySQL Native Driver</option>
+						<option value="opcache">opcache - OPcache</option>
+						<option value="openssl">openssl - OpenSSL</option>
+						<option value="pcre">pcre - Regular Expressions (Perl-Compatible)</option>
+						<option value="redis">redis - Redis</option>
+						<option value="shmop">shmop - Shared Memory</option>
+						<option value="simplexml">simplexml - SimpleXML</option>
+						<option value="sockets">sockets - Sockets</option>
+						<option value="sodium">sodium - Sodium</option>
+						<option value="ssh2">ssh2 - Secure Shell2</option>
+						<option value="xml">xml - XML Parser</option>
+						<option value="xmlreader">xmlreader - XMLReader</option>
+						<option value="zip">zip - Zip</option>
+						<option value="zlib">zlib - Zlib Compression</option>
+					</select>
+					<div id="shared_environment_phpextensions_help" class="form-text"><em>[required]</em> Enumerates the PHP extensions available with the hosting plan. PHP extensions extend the functionality of PHP for more comprehensive web development capabilities.</div>
+				</div>
+
+				<h4 class="mt-2">Performance Server Side</h4>
+				<div class="mt-2">
+					<label for="shared_environment_objectcacheoptions_httpversions" class="form-label">HTTP versions</label>
+					<select class="form-select" multiple size="4" id="shared_environment_objectcacheoptions_httpversions" name="shared_environment_objectcacheoptions_httpversions" aria-describedby="shared_environment_objectcacheoptions_httpversions_help" required aria-required="true">
+						<option value="10">1.0</option>
+						<option value="11">1.1</option>
+						<option value="20">2.0</option>
+						<option value="30">3.0</option>
+					</select>
+					<div id="shared_environment_objectcacheoptions_httpversions_help" class="form-text"><em>[required]</em> Lists the HTTP protocol versions supported by the hosting server, impacting the speed and security of data transfer between the server and clients.</div>
+				</div>
+				<div class="mt-2">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="1" id="shared_environment_performanceserverside_gzip" name="shared_environment_performanceserverside_gzip" aria-describedby="shared_environment_performanceserverside_gzip_help">
+						<label class="form-check-label" for="shared_environment_performanceserverside_gzip">Gzip</label>
+					</div>
+					<div id="shared_environment_performanceserverside_gzip_help" class="form-text"><em>[required]</em> Specifies if GZIP compression is available, a method for reducing the size of the files sent from your server to increase the speed to which they are transferred to the browser.</div>
+				</div>
+				<div class="mt-2">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="1" id="shared_environment_performanceserverside_brotli" name="shared_environment_performanceserverside_brotli" aria-describedby="shared_environment_performanceserverside_brotli_help">
+						<label class="form-check-label" for="shared_environment_performanceserverside_brotli">Brotli</label>
+					</div>
+					<div id="shared_environment_performanceserverside_brotli_help" class="form-text"><em>[required]</em> A boolean indicating whether Brotli compression is supported. Brotli is a newer compression algorithm that can provide better compression ratios than GZIP.</div>
+				</div>
+
+				<h4 class="mt-2">Object Cache</h4>
+				<div class="mt-2">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="1" id="shared_environment_objectcacheoptions_enabled" name="shared_environment_objectcacheoptions_enabled" aria-describedby="shared_environment_objectcacheoptions_enabled_help">
+						<label class="form-check-label" for="shared_environment_objectcacheoptions_enabled">Object Cache technology</label>
+					</div>
+					<div id="shared_environment_objectcacheoptions_enabled_help" class="form-text"><em>[required]</em> A boolean value indicating whether the shared hosting has an object cache.</div>
+				</div>
+				<script>
+					document.addEventListener('DOMContentLoaded', function() {
+						var checkbox = document.getElementById('shared_environment_objectcacheoptions_enabled');
+						var selectInput = document.getElementById('shared_environment_objectcacheoptions_cache');
+						function updateRequiredState() {
+							if (checkbox.checked) {
+								selectInput.required = true;
+								selectInput.setAttribute('aria-required', 'true');
+							} else {
+								selectInput.required = false;
+								selectInput.setAttribute('aria-required', 'false');
+							}
+						}
+						checkbox.addEventListener('change', updateRequiredState);
+						updateRequiredState();
+				});
+				</script>
+				<div class="mt-2">
+					<label for="shared_environment_objectcacheoptions_cache" class="form-label">Cache server</label>
+					<select class="form-select" multiple size="4" id="shared_environment_objectcacheoptions_cache" name="shared_environment_objectcacheoptions_cache" aria-describedby="shared_environment_objectcacheoptions_cache_help">
+						<option value="memcached">memcached</option>
+						<option value="own">Own</option>
+						<option value="redis">Redis</option>
+						<option value="other">Other</option>
+					</select>
+					<div id="shared_environment_objectcacheoptions_cache_help" class="form-text"><em>[required]</em> Lists the object caching options available, which can include in-memory data storage systems like Redis and Memcached. Object caching helps improve WordPress performance by storing data in memory for faster retrieval.</div>
+				</div>
+
+
+				<h4 class="mt-2">IP address</h4>
+				<div class="mt-2">
+					<div class="form-check">-
+						<input class="form-check-input" type="checkbox" value="1" id="shared_environment_ipaddress_ipv4" name="shared_environment_ipaddress_ipv4" aria-describedby="shared_environment_ipaddress_ipv4_help">
+						<label class="form-check-label" for="shared_environment_ipaddress_ipv4">IP v4</label>
+					</div>
+					<div id="shared_environment_ipaddress_ipv4_help" class="form-text"><em>[required]</em> A boolean indicating if an IPv4 address is provided with the hosting service.</div>
+				</div>
+				<div class="mt-2">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="1" id="shared_environment_ipaddress_additionalipv4" name="shared_environment_ipaddress_additionalipv4" aria-describedby="shared_environment_ipaddress_additionalipv4_help">
+						<label class="form-check-label" for="shared_environment_ipaddress_additionalipv4">Additional IP v4</label>
+					</div>
+					<div id="shared_environment_ipaddress_additionalipv4_help" class="form-text"><em>[required]</em> Specifies if additional IPv4 addresses are available upon request or included in the plan.</div>
+				</div>
+				<div class="mt-2">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="1" id="shared_environment_ipaddress_ipv6" name="shared_environment_ipaddress_ipv6" aria-describedby="shared_environment_ipaddress_ipv6_help">
+						<label class="form-check-label" for="shared_environment_ipaddress_ipv6">IP v6</label>
+					</div>
+					<div id="shared_environment_ipaddress_ipv6_help" class="form-text"><em>[required]</em> States whether IPv6 support is available, which is essential for future-proofing services and enhancing connectivity.</div>
+				</div>
+				<div class="mt-2">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="1" id="shared_environment_ipaddress_additionalipv6" name="shared_environment_ipaddress_additionalipv6" aria-describedby="shared_environment_ipaddress_additionalipv6_help">
+						<label class="form-check-label" for="shared_environment_ipaddress_additionalipv6">Additional IP v6</label>
+					</div>
+					<div id="shared_environment_ipaddress_additionalipv6_help" class="form-text"><em>[required]</em> Indicates if extra IPv6 addresses can be allocated to your hosting account, useful for large-scale deployments.</div>
+				</div>
+				<h4 class="mt-2">Datacenter</h4>
+				<h5 class="mt-2">Country</h5>
+				<div class="mt-2">
+					<label for="shared_environment_datacenter_countries" class="form-label">Where is your datacenter?</label>
+					<select class="form-select" multiple size="5" id="shared_environment_datacenter_countries" name="shared_environment_datacenter_countries" aria-describedby="shared_environment_datacenter_countries_help" required aria-required="true">
+						<option value="AD">AD - Andorra</option>
+						<option value="AF">AF - Afghanistan</option>
+						<option value="AG">AG - Antigua and Barbuda</option>
+						<option value="AI">AI - Anguilla</option>
+						<option value="AL">AL - Albania</option>
+						<option value="AM">AM - Armenia</option>
+						<option value="AO">AO - Angola</option>
+						<option value="AQ">AQ - Antarctica</option>
+						<option value="AR">AR - Argentina</option>
+						<option value="AS">AS - American Samoa</option>
+						<option value="AT">AT - Austria</option>
+						<option value="AU">AU - Australia</option>
+						<option value="AW">AW - Aruba</option>
+						<option value="AX">AX - Aland Islands</option>
+						<option value="AZ">AZ - Azerbaijan</option>
+						<option value="BA">BA - Bosnia and Herzegovina</option>
+						<option value="BB">BB - Barbados</option>
+						<option value="BD">BD - Bangladesh</option>
+						<option value="BE">BE - Belgium</option>
+						<option value="BF">BF - Burkina Faso</option>
+						<option value="BG">BG - Bulgaria</option>
+						<option value="BH">BH - Bahrain</option>
+						<option value="BI">BI - Burundi</option>
+						<option value="BJ">BJ - Benin</option>
+						<option value="BM">BM - Bermuda</option>
+						<option value="BN">BN - Brunei Darussalam</option>
+						<option value="BO">BO - Bolivia</option>
+						<option value="BQ">BQ - Bonaire, Sint Eustatius, and Saba</option>
+						<option value="BR">BR - Brazil</option>
+						<option value="BS">BS - Bahamas</option>
+						<option value="BT">BT - Bhutan</option>
+						<option value="BV">BV - Bouvet Island</option>
+						<option value="BW">BW - Botswana</option>
+						<option value="BY">BY - Belarus</option>
+						<option value="BZ">BZ - Belize</option>
+						<option value="CA">CA - Canada</option>
+						<option value="CF">CF - Central African Republic</option>
+						<option value="CL">CL - Chile</option>
+						<option value="CM">CM - Cameroon</option>
+						<option value="CV">CV - Cape Verde</option>
+						<option value="DZ">DZ - Algeria</option>
+						<option value="KH">KH - Cambodia</option>
+						<option value="KY">KY - Cayman Islands</option>
+						<option value="IO">IO - British Indian Ocean Territory</option>
+						<option value="TD">TD - Chad</option>
+						<option value="CN">CN - China</option>
+						<option value="CX">CX - Christmas Island</option>
+						<option value="CC">CC - Cocos (Keeling) Islands</option>
+						<option value="CO">CO - Colombia</option>
+						<option value="KM">KM - Comoros</option>
+						<option value="CG">CG - Congo</option>
+						<option value="CD">CD - Democratic Republic of the Congo</option>
+						<option value="CK">CK - Cook Islands</option>
+						<option value="CR">CR - Costa Rica</option>
+						<option value="CI">CI - Cote D'Ivoire</option>
+						<option value="HR">HR - Croatia</option>
+						<option value="CU">CU - Cuba</option>
+						<option value="CW">CW - Curacao</option>
+						<option value="CY">CY - Cyprus</option>
+						<option value="CZ">CZ - Czech Republic</option>
+						<option value="DK">DK - Denmark</option>
+						<option value="DJ">DJ - Djibouti</option>
+						<option value="DM">DM - Dominica</option>
+						<option value="DO">DO - Dominican Republic</option>
+						<option value="EC">EC - Ecuador</option>
+						<option value="EG">EG - Egypt</option>
+						<option value="SV">SV - El Salvador</option>
+						<option value="GQ">GQ - Equatorial Guinea</option>
+						<option value="ER">ER - Eritrea</option>
+						<option value="EE">EE - Estonia</option>
+						<option value="ET">ET - Ethiopia</option>
+						<option value="FK">FK - Falkland Islands (Malvinas)</option>
+						<option value="FO">FO - Faroe Islands</option>
+						<option value="FJ">FJ - Fiji</option>
+						<option value="FI">FI - Finland</option>
+						<option value="FR">FR - France</option>
+						<option value="GF">GF - French Guiana</option>
+						<option value="PF">PF - French Polynesia</option>
+						<option value="TF">TF - French Southern Territories</option>
+						<option value="GA">GA - Gabon</option>
+						<option value="GM">GM - Gambia</option>
+						<option value="GE">GE - Georgia</option>
+						<option value="DE">DE - Germany</option>
+						<option value="GH">GH - Ghana</option>
+						<option value="GI">GI - Gibraltar</option>
+						<option value="GR">GR - Greece</option>
+						<option value="GL">GL - Greenland</option>
+						<option value="GD">GD - Grenada</option>
+						<option value="GP">GP - Guadeloupe</option>
+						<option value="GU">GU - Guam</option>
+						<option value="GT">GT - Guatemala</option>
+						<option value="GG">GG - Guernsey</option>
+						<option value="GN">GN - Guinea</option>
+						<option value="GW">GW - Guinea-Bissau</option>
+						<option value="GY">GY - Guyana</option>
+						<option value="HT">HT - Haiti</option>
+						<option value="HM">HM - Heard Island and Mcdonald Islands</option>
+						<option value="VA">VA - Vatican City State</option>
+						<option value="HN">HN - Honduras</option>
+						<option value="HK">HK - Hong Kong</option>
+						<option value="HU">HU - Hungary</option>
+						<option value="IS">IS - Iceland</option>
+						<option value="IN">IN - India</option>
+						<option value="ID">ID - Indonesia</option>
+						<option value="IR">IR - Iran</option>
+						<option value="IQ">IQ - Iraq</option>
+						<option value="IE">IE - Ireland</option>
+						<option value="IM">IM - Isle of Man</option>
+						<option value="IL">IL - Israel</option>
+						<option value="IT">IT - Italy</option>
+						<option value="JM">JM - Jamaica</option>
+						<option value="JP">JP - Japan</option>
+						<option value="JE">JE - Jersey</option>
+						<option value="JO">JO - Jordan</option>
+						<option value="KZ">KZ - Kazakhstan</option>
+						<option value="KE">KE - Kenya</option>
+						<option value="KI">KI - Kiribati</option>
+						<option value="KP">KP - Democratic People's Republic of Korea</option>
+						<option value="KR">KR - Republic of Korea</option>
+						<option value="XK">XK - Kosovo</option>
+						<option value="KW">KW - Kuwait</option>
+						<option value="KG">KG - Kyrgyzstan</option>
+						<option value="LA">LA - Lao</option>
+						<option value="LV">LV - Latvia</option>
+						<option value="LB">LB - Lebanon</option>
+						<option value="LS">LS - Lesotho</option>
+						<option value="LR">LR - Liberia</option>
+						<option value="LY">LY - Libyan Arab Jamahiriya</option>
+						<option value="LI">LI - Liechtenstein</option>
+						<option value="LT">LT - Lithuania</option>
+						<option value="LU">LU - Luxembourg</option>
+						<option value="MO">MO - Macao</option>
+						<option value="MK">MK - Macedonia</option>
+						<option value="MG">MG - Madagascar</option>
+						<option value="MW">MW - Malawi</option>
+						<option value="MY">MY - Malaysia</option>
+						<option value="MV">MV - Maldives</option>
+						<option value="ML">ML - Mali</option>
+						<option value="MT">MT - Malta</option>
+						<option value="MH">MH - Marshall Islands</option>
+						<option value="MQ">MQ - Martinique</option>
+						<option value="MR">MR - Mauritania</option>
+						<option value="MU">MU - Mauritius</option>
+						<option value="YT">YT - Mayotte</option>
+						<option value="MX">MX - Mexico</option>
+						<option value="FM">FM - Micronesia</option>
+						<option value="MD">MD - Moldova</option>
+						<option value="MC">MC - Monaco</option>
+						<option value="MN">MN - Mongolia</option>
+						<option value="ME">ME - Montenegro</option>
+						<option value="MS">MS - Montserrat</option>
+						<option value="MA">MA - Morocco</option>
+						<option value="MZ">MZ - Mozambique</option>
+						<option value="MM">MM - Myanmar</option>
+						<option value="NA">NA - Namibia</option>
+						<option value="NR">NR - Nauru</option>
+						<option value="NR">NR - Nepal</option>
+						<option value="NL">NL - Netherlands</option>
+						<option value="AN">AN - Netherlands Antilles</option>
+						<option value="NC">NC - New Caledonia</option>
+						<option value="NZ">NZ - New Zealand</option>
+						<option value="NI">NI - Nicaragua</option>
+						<option value="NE">NE - Niger</option>
+						<option value="NG">NG - Nigeria</option>
+						<option value="NU">NU - Niue</option>
+						<option value="NF">NF - Norfolk Island</option>
+						<option value="MP">MP - Northern Mariana Islands</option>
+						<option value="NO">NO - Norway</option>
+						<option value="OM">OM - Oman</option>
+						<option value="PK">PK - Pakistan</option>
+						<option value="PW">PW - Palau</option>
+						<option value="PS">PS - Palestinian Territory</option>
+						<option value="PA">PA - Panama</option>
+						<option value="PG">PG - Papua New Guinea</option>
+						<option value="PY">PY - Paraguay</option>
+						<option value="PE">PE - Peru</option>
+						<option value="PH">PH - Philippines</option>
+						<option value="PN">PN - Pitcairn</option>
+						<option value="PL">PL - Poland</option>
+						<option value="PT">PT - Portugal</option>
+						<option value="PR">PR - Puerto Rico</option>
+						<option value="QA">QA - Qatar</option>
+						<option value="RE">RE - Reunion</option>
+						<option value="RO">RO - Romania</option>
+						<option value="RU">RU - Russian Federation</option>
+						<option value="RW">RW- Rwanda</option>
+						<option value="BL">BL - Saint Barthelemy</option>
+						<option value="SH">SH - Saint Helena</option>
+						<option value="KN">KN - Saint Kitts and Nevis</option>
+						<option value="LC">LC - Saint Lucia</option>
+						<option value="MF">MF - Saint Martin</option>
+						<option value="PM">PM - Saint Pierre and Miquelon</option>
+						<option value="VC">VC - Saint Vincent and the Grenadines</option>
+						<option value="WS">WS - Samoa</option>
+						<option value="SM">SM - San Marino</option>
+						<option value="ST">ST - Sao Tome and Principe</option>
+						<option value="SA">SA - Saudi Arabia</option>
+						<option value="SN">SN - Senegal</option>
+						<option value="RS">RS - Serbia</option>
+						<option value="CS">CS - Serbia and Montenegro</option>
+						<option value="SC">SC - Seychelles</option>
+						<option value="SL">SL - Sierra Leone</option>
+						<option value="SG">SG - Singapore</option>
+						<option value="SX">SX - Sint Maarten</option>
+						<option value="SK">SK - Slovakia</option>
+						<option value="SI">SI - Slovenia</option>
+						<option value="SB">SB - Solomon Islands</option>
+						<option value="SO">SO - Somalia</option>
+						<option value="ZA">ZA - South Africa</option>
+						<option value="GS">GS - South Georgia and the South Sandwich Islands</option>
+						<option value="SS">SS - South Sudan</option>
+						<option value="ES">ES - Spain</option>
+						<option value="LK">LK - Sri Lanka</option>
+						<option value="SD">SD - Sudan</option>
+						<option value="SR">SR - Suriname</option>
+						<option value="SJ">SJ - Svalbard and Jan Mayen</option>
+						<option value="SZ">SZ - Swaziland</option>
+						<option value="SE">SE - Sweden</option>
+						<option value="CH">CH - Switzerland</option>
+						<option value="SY">SY - Syrian Arab Republic</option>
+						<option value="TW">TW - Taiwan</option>
+						<option value="TJ">TJ - Tajikistan</option>
+						<option value="TZ">TZ - Tanzania</option>
+						<option value="TH">TH - Thailand</option>
+						<option value="TL">TL - Timor-Leste</option>
+						<option value="TG">TG - Togo</option>
+						<option value="TK">TK - Tokelau</option>
+						<option value="TO">TO - Tonga</option>
+						<option value="TT">TT - Trinidad and Tobago</option>
+						<option value="TN">TN - Tunisia</option>
+						<option value="TR">TR - Turkey</option>
+						<option value="TM">TM - Turkmenistan</option>
+						<option value="TC">TC - Turks and Caicos Islands</option>
+						<option value="TV">TV - Tuvalu</option>
+						<option value="UG">UG - Uganda</option>
+						<option value="UA">UA - Ukraine</option>
+						<option value="AE">AE - United Arab Emirates</option>
+						<option value="GB">GB - United Kingdom</option>
+						<option value="US">US - United States</option>
+						<option value="UM">UM - United States Minor Outlying Islands</option>
+						<option value="UY">UY - Uruguay</option>
+						<option value="UZ">UZ - Uzbekistan</option>
+						<option value="VU">VU - Vanuatu</option>
+						<option value="VE">VE - Venezuela</option>
+						<option value="VN">VN - Viet Nam</option>
+						<option value="VG">VG - British Virgin Islands</option>
+						<option value="VI">VI - U.S. Virgin Islands</option>
+						<option value="WF">WF - Wallis and Futuna</option>
+						<option value="EH">EH - Western Sahara</option>
+						<option value="YE">YE - Yemen</option>
+						<option value="ZM">ZM - Zambia</option>
+						<option value="ZW">ZW - Zimbabwe</option>
+					</select>
+					<div id="shared_environment_datacenter_countries_help" class="form-text"><em>[required]</em> Lists the countries where the hosting provider's data centers are located. This information is crucial for understanding the geographical distribution of the provider's infrastructure and can affect website latency and compliance with regional regulations.</div>
+				</div>
+				<h5 class="mt-2">Data stored</h5>
+				<div class="mt-2">
+					<label for="shared_environment_datacenter_datastored" class="form-label">Where is the user data stored?</label>
+					<select class="form-select" multiple size="5" id="shared_environment_datacenter_datastored" name="shared_environment_datacenter_datastored" aria-describedby="shared_environment_datacenter_datastored_help" required aria-required="true">
+						<option value="AD">AD - Andorra</option>
+						<option value="AF">AF - Afghanistan</option>
+						<option value="AG">AG - Antigua and Barbuda</option>
+						<option value="AI">AI - Anguilla</option>
+						<option value="AL">AL - Albania</option>
+						<option value="AM">AM - Armenia</option>
+						<option value="AO">AO - Angola</option>
+						<option value="AQ">AQ - Antarctica</option>
+						<option value="AR">AR - Argentina</option>
+						<option value="AS">AS - American Samoa</option>
+						<option value="AT">AT - Austria</option>
+						<option value="AU">AU - Australia</option>
+						<option value="AW">AW - Aruba</option>
+						<option value="AX">AX - Aland Islands</option>
+						<option value="AZ">AZ - Azerbaijan</option>
+						<option value="BA">BA - Bosnia and Herzegovina</option>
+						<option value="BB">BB - Barbados</option>
+						<option value="BD">BD - Bangladesh</option>
+						<option value="BE">BE - Belgium</option>
+						<option value="BF">BF - Burkina Faso</option>
+						<option value="BG">BG - Bulgaria</option>
+						<option value="BH">BH - Bahrain</option>
+						<option value="BI">BI - Burundi</option>
+						<option value="BJ">BJ - Benin</option>
+						<option value="BM">BM - Bermuda</option>
+						<option value="BN">BN - Brunei Darussalam</option>
+						<option value="BO">BO - Bolivia</option>
+						<option value="BQ">BQ - Bonaire, Sint Eustatius, and Saba</option>
+						<option value="BR">BR - Brazil</option>
+						<option value="BS">BS - Bahamas</option>
+						<option value="BT">BT - Bhutan</option>
+						<option value="BV">BV - Bouvet Island</option>
+						<option value="BW">BW - Botswana</option>
+						<option value="BY">BY - Belarus</option>
+						<option value="BZ">BZ - Belize</option>
+						<option value="CA">CA - Canada</option>
+						<option value="CF">CF - Central African Republic</option>
+						<option value="CL">CL - Chile</option>
+						<option value="CM">CM - Cameroon</option>
+						<option value="CV">CV - Cape Verde</option>
+						<option value="DZ">DZ - Algeria</option>
+						<option value="KH">KH - Cambodia</option>
+						<option value="KY">KY - Cayman Islands</option>
+						<option value="IO">IO - British Indian Ocean Territory</option>
+						<option value="TD">TD - Chad</option>
+						<option value="CN">CN - China</option>
+						<option value="CX">CX - Christmas Island</option>
+						<option value="CC">CC - Cocos (Keeling) Islands</option>
+						<option value="CO">CO - Colombia</option>
+						<option value="KM">KM - Comoros</option>
+						<option value="CG">CG - Congo</option>
+						<option value="CD">CD - Democratic Republic of the Congo</option>
+						<option value="CK">CK - Cook Islands</option>
+						<option value="CR">CR - Costa Rica</option>
+						<option value="CI">CI - Cote D'Ivoire</option>
+						<option value="HR">HR - Croatia</option>
+						<option value="CU">CU - Cuba</option>
+						<option value="CW">CW - Curacao</option>
+						<option value="CY">CY - Cyprus</option>
+						<option value="CZ">CZ - Czech Republic</option>
+						<option value="DK">DK - Denmark</option>
+						<option value="DJ">DJ - Djibouti</option>
+						<option value="DM">DM - Dominica</option>
+						<option value="DO">DO - Dominican Republic</option>
+						<option value="EC">EC - Ecuador</option>
+						<option value="EG">EG - Egypt</option>
+						<option value="SV">SV - El Salvador</option>
+						<option value="GQ">GQ - Equatorial Guinea</option>
+						<option value="ER">ER - Eritrea</option>
+						<option value="EE">EE - Estonia</option>
+						<option value="ET">ET - Ethiopia</option>
+						<option value="FK">FK - Falkland Islands (Malvinas)</option>
+						<option value="FO">FO - Faroe Islands</option>
+						<option value="FJ">FJ - Fiji</option>
+						<option value="FI">FI - Finland</option>
+						<option value="FR">FR - France</option>
+						<option value="GF">GF - French Guiana</option>
+						<option value="PF">PF - French Polynesia</option>
+						<option value="TF">TF - French Southern Territories</option>
+						<option value="GA">GA - Gabon</option>
+						<option value="GM">GM - Gambia</option>
+						<option value="GE">GE - Georgia</option>
+						<option value="DE">DE - Germany</option>
+						<option value="GH">GH - Ghana</option>
+						<option value="GI">GI - Gibraltar</option>
+						<option value="GR">GR - Greece</option>
+						<option value="GL">GL - Greenland</option>
+						<option value="GD">GD - Grenada</option>
+						<option value="GP">GP - Guadeloupe</option>
+						<option value="GU">GU - Guam</option>
+						<option value="GT">GT - Guatemala</option>
+						<option value="GG">GG - Guernsey</option>
+						<option value="GN">GN - Guinea</option>
+						<option value="GW">GW - Guinea-Bissau</option>
+						<option value="GY">GY - Guyana</option>
+						<option value="HT">HT - Haiti</option>
+						<option value="HM">HM - Heard Island and Mcdonald Islands</option>
+						<option value="VA">VA - Vatican City State</option>
+						<option value="HN">HN - Honduras</option>
+						<option value="HK">HK - Hong Kong</option>
+						<option value="HU">HU - Hungary</option>
+						<option value="IS">IS - Iceland</option>
+						<option value="IN">IN - India</option>
+						<option value="ID">ID - Indonesia</option>
+						<option value="IR">IR - Iran</option>
+						<option value="IQ">IQ - Iraq</option>
+						<option value="IE">IE - Ireland</option>
+						<option value="IM">IM - Isle of Man</option>
+						<option value="IL">IL - Israel</option>
+						<option value="IT">IT - Italy</option>
+						<option value="JM">JM - Jamaica</option>
+						<option value="JP">JP - Japan</option>
+						<option value="JE">JE - Jersey</option>
+						<option value="JO">JO - Jordan</option>
+						<option value="KZ">KZ - Kazakhstan</option>
+						<option value="KE">KE - Kenya</option>
+						<option value="KI">KI - Kiribati</option>
+						<option value="KP">KP - Democratic People's Republic of Korea</option>
+						<option value="KR">KR - Republic of Korea</option>
+						<option value="XK">XK - Kosovo</option>
+						<option value="KW">KW - Kuwait</option>
+						<option value="KG">KG - Kyrgyzstan</option>
+						<option value="LA">LA - Lao</option>
+						<option value="LV">LV - Latvia</option>
+						<option value="LB">LB - Lebanon</option>
+						<option value="LS">LS - Lesotho</option>
+						<option value="LR">LR - Liberia</option>
+						<option value="LY">LY - Libyan Arab Jamahiriya</option>
+						<option value="LI">LI - Liechtenstein</option>
+						<option value="LT">LT - Lithuania</option>
+						<option value="LU">LU - Luxembourg</option>
+						<option value="MO">MO - Macao</option>
+						<option value="MK">MK - Macedonia</option>
+						<option value="MG">MG - Madagascar</option>
+						<option value="MW">MW - Malawi</option>
+						<option value="MY">MY - Malaysia</option>
+						<option value="MV">MV - Maldives</option>
+						<option value="ML">ML - Mali</option>
+						<option value="MT">MT - Malta</option>
+						<option value="MH">MH - Marshall Islands</option>
+						<option value="MQ">MQ - Martinique</option>
+						<option value="MR">MR - Mauritania</option>
+						<option value="MU">MU - Mauritius</option>
+						<option value="YT">YT - Mayotte</option>
+						<option value="MX">MX - Mexico</option>
+						<option value="FM">FM - Micronesia</option>
+						<option value="MD">MD - Moldova</option>
+						<option value="MC">MC - Monaco</option>
+						<option value="MN">MN - Mongolia</option>
+						<option value="ME">ME - Montenegro</option>
+						<option value="MS">MS - Montserrat</option>
+						<option value="MA">MA - Morocco</option>
+						<option value="MZ">MZ - Mozambique</option>
+						<option value="MM">MM - Myanmar</option>
+						<option value="NA">NA - Namibia</option>
+						<option value="NR">NR - Nauru</option>
+						<option value="NR">NR - Nepal</option>
+						<option value="NL">NL - Netherlands</option>
+						<option value="AN">AN - Netherlands Antilles</option>
+						<option value="NC">NC - New Caledonia</option>
+						<option value="NZ">NZ - New Zealand</option>
+						<option value="NI">NI - Nicaragua</option>
+						<option value="NE">NE - Niger</option>
+						<option value="NG">NG - Nigeria</option>
+						<option value="NU">NU - Niue</option>
+						<option value="NF">NF - Norfolk Island</option>
+						<option value="MP">MP - Northern Mariana Islands</option>
+						<option value="NO">NO - Norway</option>
+						<option value="OM">OM - Oman</option>
+						<option value="PK">PK - Pakistan</option>
+						<option value="PW">PW - Palau</option>
+						<option value="PS">PS - Palestinian Territory</option>
+						<option value="PA">PA - Panama</option>
+						<option value="PG">PG - Papua New Guinea</option>
+						<option value="PY">PY - Paraguay</option>
+						<option value="PE">PE - Peru</option>
+						<option value="PH">PH - Philippines</option>
+						<option value="PN">PN - Pitcairn</option>
+						<option value="PL">PL - Poland</option>
+						<option value="PT">PT - Portugal</option>
+						<option value="PR">PR - Puerto Rico</option>
+						<option value="QA">QA - Qatar</option>
+						<option value="RE">RE - Reunion</option>
+						<option value="RO">RO - Romania</option>
+						<option value="RU">RU - Russian Federation</option>
+						<option value="RW">RW- Rwanda</option>
+						<option value="BL">BL - Saint Barthelemy</option>
+						<option value="SH">SH - Saint Helena</option>
+						<option value="KN">KN - Saint Kitts and Nevis</option>
+						<option value="LC">LC - Saint Lucia</option>
+						<option value="MF">MF - Saint Martin</option>
+						<option value="PM">PM - Saint Pierre and Miquelon</option>
+						<option value="VC">VC - Saint Vincent and the Grenadines</option>
+						<option value="WS">WS - Samoa</option>
+						<option value="SM">SM - San Marino</option>
+						<option value="ST">ST - Sao Tome and Principe</option>
+						<option value="SA">SA - Saudi Arabia</option>
+						<option value="SN">SN - Senegal</option>
+						<option value="RS">RS - Serbia</option>
+						<option value="CS">CS - Serbia and Montenegro</option>
+						<option value="SC">SC - Seychelles</option>
+						<option value="SL">SL - Sierra Leone</option>
+						<option value="SG">SG - Singapore</option>
+						<option value="SX">SX - Sint Maarten</option>
+						<option value="SK">SK - Slovakia</option>
+						<option value="SI">SI - Slovenia</option>
+						<option value="SB">SB - Solomon Islands</option>
+						<option value="SO">SO - Somalia</option>
+						<option value="ZA">ZA - South Africa</option>
+						<option value="GS">GS - South Georgia and the South Sandwich Islands</option>
+						<option value="SS">SS - South Sudan</option>
+						<option value="ES">ES - Spain</option>
+						<option value="LK">LK - Sri Lanka</option>
+						<option value="SD">SD - Sudan</option>
+						<option value="SR">SR - Suriname</option>
+						<option value="SJ">SJ - Svalbard and Jan Mayen</option>
+						<option value="SZ">SZ - Swaziland</option>
+						<option value="SE">SE - Sweden</option>
+						<option value="CH">CH - Switzerland</option>
+						<option value="SY">SY - Syrian Arab Republic</option>
+						<option value="TW">TW - Taiwan</option>
+						<option value="TJ">TJ - Tajikistan</option>
+						<option value="TZ">TZ - Tanzania</option>
+						<option value="TH">TH - Thailand</option>
+						<option value="TL">TL - Timor-Leste</option>
+						<option value="TG">TG - Togo</option>
+						<option value="TK">TK - Tokelau</option>
+						<option value="TO">TO - Tonga</option>
+						<option value="TT">TT - Trinidad and Tobago</option>
+						<option value="TN">TN - Tunisia</option>
+						<option value="TR">TR - Turkey</option>
+						<option value="TM">TM - Turkmenistan</option>
+						<option value="TC">TC - Turks and Caicos Islands</option>
+						<option value="TV">TV - Tuvalu</option>
+						<option value="UG">UG - Uganda</option>
+						<option value="UA">UA - Ukraine</option>
+						<option value="AE">AE - United Arab Emirates</option>
+						<option value="GB">GB - United Kingdom</option>
+						<option value="US">US - United States</option>
+						<option value="UM">UM - United States Minor Outlying Islands</option>
+						<option value="UY">UY - Uruguay</option>
+						<option value="UZ">UZ - Uzbekistan</option>
+						<option value="VU">VU - Vanuatu</option>
+						<option value="VE">VE - Venezuela</option>
+						<option value="VN">VN - Viet Nam</option>
+						<option value="VG">VG - British Virgin Islands</option>
+						<option value="VI">VI - U.S. Virgin Islands</option>
+						<option value="WF">WF - Wallis and Futuna</option>
+						<option value="EH">EH - Western Sahara</option>
+						<option value="YE">YE - Yemen</option>
+						<option value="ZM">ZM - Zambia</option>
+						<option value="ZW">ZW - Zimbabwe</option>
+					</select>
+					<div id="shared_environment_datacenter_datastored_help" class="form-text"><em>[required]</em> Enumerates the countries where the hosting provider stores its clients' data. This detail is important for clients concerned with data sovereignty and compliance with local data protection laws.</div>
+				</div>
+				<h5 class="mt-2">Privacy compliance</h5>
+				<div class="mt-2">
+					<label for="shared_environment_datacenter_privacycompliance" class="form-label">Specify the privacy and data protection regulations</label>
+					<select class="form-select" multiple size="5" id="shared_environment_datacenter_privacycompliance" name="shared_environment_datacenter_privacycompliance" aria-describedby="shared_environment_datacenter_privacycompliance_help" required aria-required="true">
+						<option value="none">None</option>
+						<option value="ccpa">CCPA - California Consumer Privacy Act</option>
+						<option value="coppa">COPPA - United States' Children's Online Privacy Protection Rule</option>
+						<option value="gdpr">GDPR - Europe's General Data Protection Regulation</option>
+						<option value="lgpd">LGPD - Brazilian General Data Protection Law</option>
+						<option value="pdpa">PDPA - Thailand's Personal Data Protection Act</option>
+						<option value="pipl">PIPL - China's Personal Information Protection Law</option>
+						<option value="popia">POPIA - South Africa's Protection of Personal Information</option>
+						<option value="other">Other</option>
+					</select>
+					<div id="shared_environment_datacenter_privacycompliance_help" class="form-text"><em>[required]</em> Specifies the privacy and data protection regulations with which the hosting provider complies. Examples include GDPR for data protection in the European Union, CCPA for privacy in California, USA, and others. Compliance with these regulations ensures that the provider adheres to legal standards for data privacy and protection.</div>
+				</div>
+				<h4 class="mt-2">CDN</h4>
+				<div class="mt-2">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="1" id="shared_environment_cdn_owncdn" name="shared_environment_cdn_owncdn" aria-describedby="shared_environment_cdn_owncdn_help">
+						<label class="form-check-label" for="shared_environment_cdn_owncdn">Own CDN</label>
+					</div>
+					<div id="shared_environment_cdn_owncdn_help" class="form-text"><em>[required]</em> Indicates if the hosting provider offers its own CDN (Content Delivery Network) solution, which can greatly improve website load times for visitors from different geographical locations.</div>
+				</div>
+				<div class="mt-2">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="1" id="shared_environment_cdn_cloudflareintegration" name="shared_environment_cdn_cloudflareintegration" aria-describedby="shared_environment_cdn_cloudflareintegration_help">
+						<label class="form-check-label" for="shared_environment_cdn_cloudflareintegration">Integration with other CDN</label>
+					</div>
+					<div id="shared_environment_cdn_cloudflareintegration_help" class="form-text"><em>[required]</em> Specifies whether there is direct integration support for Cloudflare's services, including its CDN, security, and DNS services.</div>
+				</div>
+				<div class="mt-2">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="1" id="shared_environment_cdn_integrationwithothers" name="shared_environment_cdn_integrationwithothers" aria-describedby="shared_environment_cdn_integrationwithothers_help">
+						<label class="form-check-label" for="shared_environment_cdn_integrationwithothers">Integration with other CDN</label>
+					</div>
+					<div id="shared_environment_cdn_integrationwithothers_help" class="form-text"><em>[required]</em> A boolean that shows if the hosting service integrates with other CDN providers, offering flexibility in choosing CDN services.</div>
+				</div>
+
+
+
+
+
+
+
 
 
 
 
 
 <!--
+
+
+phpversions
+phpextensions
+
+performanceserverside
+objectcacheoptions
+
+IP address
+Datacenter
+CDN
+
+
+
         "items":
             {
             "properties":
@@ -189,755 +928,6 @@
                     {
                     "properties":
                         {
-                        "cdn":
-                            {
-                            "properties":
-                                {
-                                "cloudflareintegration":
-                                    {
-                                    "description": "Specifies whether there is direct integration support for Cloudflare's services, including its CDN, security, and DNS services.",
-                                    "type": "boolean"
-                                    },
-                                "integrationwithothers":
-                                    {
-                                    "description": "A boolean that shows if the hosting service integrates with other CDN providers, offering flexibility in choosing CDN services.",
-                                    "type": "boolean"
-                                    },
-                                "owncdn":
-                                    {
-                                    "description": "Indicates if the hosting provider offers its own CDN (Content Delivery Network) solution, which can greatly improve website load times for visitors from different geographical locations.",
-                                    "type": "boolean"
-                                    }
-                                },
-                            "type": "object"
-                            },
-                        "datacenter":
-                            {
-                            "properties":
-                                {
-                                "countries":
-                                    {
-                                    "description": "Lists the countries where the hosting provider's data centers are located. This information is crucial for understanding the geographical distribution of the provider's infrastructure and can affect website latency and compliance with regional regulations.",
-                                    "items":
-                                        {
-                                        "enum":
-                                            [
-                                            "AD",
-                                            "AE",
-                                            "AF",
-                                            "AG",
-                                            "AI",
-                                            "AL",
-                                            "AM",
-                                            "AO",
-                                            "AQ",
-                                            "AR",
-                                            "AS",
-                                            "AT",
-                                            "AU",
-                                            "AW",
-                                            "AX",
-                                            "AZ",
-                                            "BA",
-                                            "BB",
-                                            "BD",
-                                            "BE",
-                                            "BF",
-                                            "BG",
-                                            "BH",
-                                            "BI",
-                                            "BJ",
-                                            "BL",
-                                            "BM",
-                                            "BN",
-                                            "BO",
-                                            "BQ",
-                                            "BR",
-                                            "BS",
-                                            "BT",
-                                            "BV",
-                                            "BW",
-                                            "BY",
-                                            "BZ",
-                                            "CA",
-                                            "CC",
-                                            "CD",
-                                            "CF",
-                                            "CG",
-                                            "CH",
-                                            "CI",
-                                            "CK",
-                                            "CL",
-                                            "CM",
-                                            "CN",
-                                            "CO",
-                                            "CR",
-                                            "CU",
-                                            "CV",
-                                            "CW",
-                                            "CX",
-                                            "CY",
-                                            "CZ",
-                                            "DE",
-                                            "DJ",
-                                            "DK",
-                                            "DM",
-                                            "DO",
-                                            "DZ",
-                                            "EC",
-                                            "EE",
-                                            "EG",
-                                            "EH",
-                                            "ER",
-                                            "ES",
-                                            "ET",
-                                            "FI",
-                                            "FJ",
-                                            "FK",
-                                            "FM",
-                                            "FO",
-                                            "FR",
-                                            "GA",
-                                            "GB",
-                                            "GD",
-                                            "GE",
-                                            "GF",
-                                            "GG",
-                                            "GH",
-                                            "GI",
-                                            "GL",
-                                            "GM",
-                                            "GN",
-                                            "GP",
-                                            "GQ",
-                                            "GR",
-                                            "GS",
-                                            "GT",
-                                            "GU",
-                                            "GW",
-                                            "GY",
-                                            "HK",
-                                            "HM",
-                                            "HN",
-                                            "HR",
-                                            "HT",
-                                            "HU",
-                                            "ID",
-                                            "IE",
-                                            "IL",
-                                            "IM",
-                                            "IN",
-                                            "IO",
-                                            "IQ",
-                                            "IR",
-                                            "IS",
-                                            "IT",
-                                            "JE",
-                                            "JM",
-                                            "JO",
-                                            "JP",
-                                            "KE",
-                                            "KG",
-                                            "KH",
-                                            "KI",
-                                            "KM",
-                                            "KN",
-                                            "KP",
-                                            "KR",
-                                            "KW",
-                                            "KY",
-                                            "KZ",
-                                            "LA",
-                                            "LB",
-                                            "LC",
-                                            "LI",
-                                            "LK",
-                                            "LR",
-                                            "LS",
-                                            "LT",
-                                            "LU",
-                                            "LV",
-                                            "LY",
-                                            "MA",
-                                            "MC",
-                                            "MD",
-                                            "ME",
-                                            "MF",
-                                            "MG",
-                                            "MH",
-                                            "MK",
-                                            "ML",
-                                            "MM",
-                                            "MN",
-                                            "MO",
-                                            "MP",
-                                            "MQ",
-                                            "MR",
-                                            "MS",
-                                            "MT",
-                                            "MU",
-                                            "MV",
-                                            "MW",
-                                            "MX",
-                                            "MY",
-                                            "MZ",
-                                            "NA",
-                                            "NC",
-                                            "NE",
-                                            "NF",
-                                            "NG",
-                                            "NI",
-                                            "NL",
-                                            "NO",
-                                            "NP",
-                                            "NR",
-                                            "NU",
-                                            "NZ",
-                                            "OM",
-                                            "PA",
-                                            "PE",
-                                            "PF",
-                                            "PG",
-                                            "PH",
-                                            "PK",
-                                            "PL",
-                                            "PM",
-                                            "PN",
-                                            "PR",
-                                            "PS",
-                                            "PT",
-                                            "PW",
-                                            "PY",
-                                            "QA",
-                                            "RE",
-                                            "RO",
-                                            "RS",
-                                            "RU",
-                                            "RW",
-                                            "SA",
-                                            "SB",
-                                            "SC",
-                                            "SD",
-                                            "SE",
-                                            "SG",
-                                            "SH",
-                                            "SI",
-                                            "SJ",
-                                            "SK",
-                                            "SL",
-                                            "SM",
-                                            "SN",
-                                            "SO",
-                                            "SR",
-                                            "SS",
-                                            "ST",
-                                            "SV",
-                                            "SX",
-                                            "SY",
-                                            "SZ",
-                                            "TC",
-                                            "TD",
-                                            "TF",
-                                            "TG",
-                                            "TH",
-                                            "TJ",
-                                            "TK",
-                                            "TL",
-                                            "TM",
-                                            "TN",
-                                            "TO",
-                                            "TR",
-                                            "TT",
-                                            "TV",
-                                            "TW",
-                                            "TZ",
-                                            "UA",
-                                            "UG",
-                                            "UM",
-                                            "US",
-                                            "UY",
-                                            "UZ",
-                                            "VA",
-                                            "VC",
-                                            "VE",
-                                            "VG",
-                                            "VI",
-                                            "VN",
-                                            "VU",
-                                            "WF",
-                                            "WS",
-                                            "YE",
-                                            "YT",
-                                            "ZA",
-                                            "ZM",
-                                            "ZW"
-                                            ],
-                                        "type": "string"
-                                        },
-                                    "type": "array"
-                                    },
-                                "datastored":
-                                    {
-                                    "description": "Enumerates the countries where the hosting provider stores its clients' data. This detail is important for clients concerned with data sovereignty and compliance with local data protection laws.",
-                                    "items":
-                                        {
-                                        "enum":
-                                            [
-                                            "AD",
-                                            "AE",
-                                            "AF",
-                                            "AG",
-                                            "AI",
-                                            "AL",
-                                            "AM",
-                                            "AO",
-                                            "AQ",
-                                            "AR",
-                                            "AS",
-                                            "AT",
-                                            "AU",
-                                            "AW",
-                                            "AX",
-                                            "AZ",
-                                            "BA",
-                                            "BB",
-                                            "BD",
-                                            "BE",
-                                            "BF",
-                                            "BG",
-                                            "BH",
-                                            "BI",
-                                            "BJ",
-                                            "BL",
-                                            "BM",
-                                            "BN",
-                                            "BO",
-                                            "BQ",
-                                            "BR",
-                                            "BS",
-                                            "BT",
-                                            "BV",
-                                            "BW",
-                                            "BY",
-                                            "BZ",
-                                            "CA",
-                                            "CC",
-                                            "CD",
-                                            "CF",
-                                            "CG",
-                                            "CH",
-                                            "CI",
-                                            "CK",
-                                            "CL",
-                                            "CM",
-                                            "CN",
-                                            "CO",
-                                            "CR",
-                                            "CU",
-                                            "CV",
-                                            "CW",
-                                            "CX",
-                                            "CY",
-                                            "CZ",
-                                            "DE",
-                                            "DJ",
-                                            "DK",
-                                            "DM",
-                                            "DO",
-                                            "DZ",
-                                            "EC",
-                                            "EE",
-                                            "EG",
-                                            "EH",
-                                            "ER",
-                                            "ES",
-                                            "ET",
-                                            "FI",
-                                            "FJ",
-                                            "FK",
-                                            "FM",
-                                            "FO",
-                                            "FR",
-                                            "GA",
-                                            "GB",
-                                            "GD",
-                                            "GE",
-                                            "GF",
-                                            "GG",
-                                            "GH",
-                                            "GI",
-                                            "GL",
-                                            "GM",
-                                            "GN",
-                                            "GP",
-                                            "GQ",
-                                            "GR",
-                                            "GS",
-                                            "GT",
-                                            "GU",
-                                            "GW",
-                                            "GY",
-                                            "HK",
-                                            "HM",
-                                            "HN",
-                                            "HR",
-                                            "HT",
-                                            "HU",
-                                            "ID",
-                                            "IE",
-                                            "IL",
-                                            "IM",
-                                            "IN",
-                                            "IO",
-                                            "IQ",
-                                            "IR",
-                                            "IS",
-                                            "IT",
-                                            "JE",
-                                            "JM",
-                                            "JO",
-                                            "JP",
-                                            "KE",
-                                            "KG",
-                                            "KH",
-                                            "KI",
-                                            "KM",
-                                            "KN",
-                                            "KP",
-                                            "KR",
-                                            "KW",
-                                            "KY",
-                                            "KZ",
-                                            "LA",
-                                            "LB",
-                                            "LC",
-                                            "LI",
-                                            "LK",
-                                            "LR",
-                                            "LS",
-                                            "LT",
-                                            "LU",
-                                            "LV",
-                                            "LY",
-                                            "MA",
-                                            "MC",
-                                            "MD",
-                                            "ME",
-                                            "MF",
-                                            "MG",
-                                            "MH",
-                                            "MK",
-                                            "ML",
-                                            "MM",
-                                            "MN",
-                                            "MO",
-                                            "MP",
-                                            "MQ",
-                                            "MR",
-                                            "MS",
-                                            "MT",
-                                            "MU",
-                                            "MV",
-                                            "MW",
-                                            "MX",
-                                            "MY",
-                                            "MZ",
-                                            "NA",
-                                            "NC",
-                                            "NE",
-                                            "NF",
-                                            "NG",
-                                            "NI",
-                                            "NL",
-                                            "NO",
-                                            "NP",
-                                            "NR",
-                                            "NU",
-                                            "NZ",
-                                            "OM",
-                                            "PA",
-                                            "PE",
-                                            "PF",
-                                            "PG",
-                                            "PH",
-                                            "PK",
-                                            "PL",
-                                            "PM",
-                                            "PN",
-                                            "PR",
-                                            "PS",
-                                            "PT",
-                                            "PW",
-                                            "PY",
-                                            "QA",
-                                            "RE",
-                                            "RO",
-                                            "RS",
-                                            "RU",
-                                            "RW",
-                                            "SA",
-                                            "SB",
-                                            "SC",
-                                            "SD",
-                                            "SE",
-                                            "SG",
-                                            "SH",
-                                            "SI",
-                                            "SJ",
-                                            "SK",
-                                            "SL",
-                                            "SM",
-                                            "SN",
-                                            "SO",
-                                            "SR",
-                                            "SS",
-                                            "ST",
-                                            "SV",
-                                            "SX",
-                                            "SY",
-                                            "SZ",
-                                            "TC",
-                                            "TD",
-                                            "TF",
-                                            "TG",
-                                            "TH",
-                                            "TJ",
-                                            "TK",
-                                            "TL",
-                                            "TM",
-                                            "TN",
-                                            "TO",
-                                            "TR",
-                                            "TT",
-                                            "TV",
-                                            "TW",
-                                            "TZ",
-                                            "UA",
-                                            "UG",
-                                            "UM",
-                                            "US",
-                                            "UY",
-                                            "UZ",
-                                            "VA",
-                                            "VC",
-                                            "VE",
-                                            "VG",
-                                            "VI",
-                                            "VN",
-                                            "VU",
-                                            "WF",
-                                            "WS",
-                                            "YE",
-                                            "YT",
-                                            "ZA",
-                                            "ZM",
-                                            "ZW"
-                                            ],
-                                        "type": "string"
-                                        },
-                                    "type": "array"
-                                    },
-                                "privacycompliance":
-                                    {
-                                    "description": "Specifies the privacy and data protection regulations with which the hosting provider complies. Examples include GDPR for data protection in the European Union, CCPA for privacy in California, USA, and others. Compliance with these regulations ensures that the provider adheres to legal standards for data privacy and protection.",
-                                    "items":
-                                        {
-                                        "enum":
-                                            [
-                                            "ccpa",
-                                            "coppa",
-                                            "gdpr",
-                                            "lgpd",
-                                            "pdpa",
-                                            "pipl",
-                                            "popia",
-                                            "other"
-                                            ],
-                                        "type": "string"
-                                        },
-                                    "type": "array"
-                                    }
-                                },
-                            "required":
-                                [
-                                "countries",
-                                "datastored",
-                                "privacycompliance"
-                                ],
-                            "type": "object"
-                            },
-                        "ipaddress":
-                            {
-                            "properties":
-                                {
-                                "additionalipv4":
-                                    {
-                                    "description": "Specifies if additional IPv4 addresses are available upon request or included in the plan.",
-                                    "type": "boolean"
-                                    },
-                                "additionalipv6":
-                                    {
-                                    "description": " Indicates if extra IPv6 addresses can be allocated to your hosting account, useful for large-scale deployments.",
-                                    "type": "boolean"
-                                    },
-                                "ipv4":
-                                    {
-                                    "description": "A boolean indicating if an IPv4 address is provided with the hosting service.",
-                                    "type": "boolean"
-                                    },
-                                "ipv6":
-                                    {
-                                    "description": "States whether IPv6 support is available, which is essential for future-proofing services and enhancing connectivity.",
-                                    "type": "boolean"
-                                    }
-                                },
-                            "required":
-                                [
-                                "additionalipv4",
-                                "additionalipv6",
-                                "ipv4",
-                                "ipv6"
-                                ],
-                            "type": "object"
-                            },
-                        "objectcacheoptions":
-                            {
-                            "properties":
-                                {
-                                "cache":
-                                    {
-                                    "description": "Lists the object caching options available, which can include in-memory data storage systems like Redis and Memcached. Object caching helps improve WordPress performance by storing data in memory for faster retrieval.",
-                                    "items":
-                                        {
-                                        "enum":
-                                            [
-                                            "redis",
-                                            "memcached",
-                                            "own",
-                                            "others"
-                                            ],
-                                        "type": "string"
-                                        }
-                                    },
-                                "enabled":
-                                    {
-                                    "type": "boolean"
-                                    }
-                                },
-                            "type": "object"
-                            },
-                        "performanceserverside":
-                            {
-                            "properties":
-                                {
-                                "brotli":
-                                    {
-                                    "description": "A boolean indicating whether Brotli compression is supported. Brotli is a newer compression algorithm that can provide better compression ratios than GZIP.",
-                                    "type": "boolean"
-                                    },
-                                "gzip":
-                                    {
-                                    "description": "Specifies if GZIP compression is available, a method for reducing the size of the files sent from your server to increase the speed to which they are transferred to the browser.",
-                                    "type": "boolean"
-                                    },
-                                "httpversions":
-                                    {
-                                    "description": " Lists the HTTP protocol versions supported by the hosting server, impacting the speed and security of data transfer between the server and clients.",
-                                    "items":
-                                        {
-                                        "enum":
-                                            [
-                                            "1.0",
-                                            "1.1",
-                                            "2.0",
-                                            "3.0"
-                                            ],
-                                        "type": "string"
-                                        },
-                                    "type": "array"
-                                    }
-                                },
-                            "required":
-                                [
-                                "brotli",
-                                "gzip",
-                                "httpversions"
-                                ],
-                            "type": "object"
-                            },
-                        "phpextensions":
-                            {
-                            "items":
-                                {
-                                "description": "Enumerates the PHP extensions available with the hosting plan. PHP extensions extend the functionality of PHP for more comprehensive web development capabilities.",
-                                "enum":
-                                    [
-                                    "json",
-                                    "mysqli",
-                                    "mysqlnd",
-                                    "curl",
-                                    "dom",
-                                    "exif",
-                                    "fileinfo",
-                                    "hash",
-                                    "igbinary",
-                                    "imagick",
-                                    "intl",
-                                    "mbstring",
-                                    "openssl",
-                                    "pcre",
-                                    "xml",
-                                    "zip",
-                                    "apcu",
-                                    "memcached",
-                                    "opcache",
-                                    "redis",
-                                    "bc",
-                                    "filter",
-                                    "image",
-                                    "iconv",
-                                    "shmop",
-                                    "simplexml",
-                                    "sodium",
-                                    "xmlreader",
-                                    "zlib",
-                                    "ssh2",
-                                    "ftp",
-                                    "sockets"
-                                    ],
-                                "type": "string"
-                                },
-                            "type": "array"
-                            },
-                        "phpversions":
-                            {
-                            "description": "Lists the PHP versions supported by the hosting service. PHP is a widely-used open-source scripting language that is especially suited for web development.",
-                            "items":
-                                {
-                                "enum":
-                                    [
-                                    "5.0",
-                                    "5.1",
-                                    "5.2",
-                                    "5.3",
-                                    "5.4",
-                                    "5.5",
-                                    "5.6",
-                                    "7.0",
-                                    "7.1",
-                                    "7.2",
-                                    "7.3",
-                                    "7.4",
-                                    "8.0",
-                                    "8.1",
-                                    "8.2",
-                                    "8.3",
-                                    "8.4"
-                                    ],
-                                "type": "string"
-                                },
-                            "type": "array"
-                            },
                         "serverupdates":
                             {
                             "properties":
