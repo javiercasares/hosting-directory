@@ -733,7 +733,7 @@
                                     },
                                 "privacycompliance":
                                     {
-                                    "description": "xxSpecifies the privacy and data protection regulations with which the hosting provider complies. Examples include GDPR for data protection in the European Union, CCPA for privacy in California, USA, and others. Compliance with these regulations ensures that the provider adheres to legal standards for data privacy and protection.",
+                                    "description": "Specifies the privacy and data protection regulations with which the hosting provider complies. Examples include GDPR for data protection in the European Union, CCPA for privacy in California, USA, and others. Compliance with these regulations ensures that the provider adheres to legal standards for data privacy and protection.",
                                     "items":
                                         {
                                         "enum":
@@ -1081,7 +1081,18 @@
                             "description": "The type of security certificate provided, such as Let's Encrypt or other.",
                             "enum":
                                 [
+                                "aws",
+                                "cloudflare",
+                                "digicert",
+                                "entrust",
+                                "geotrust",
+                                "globalsign",
+                                "godaddy",
                                 "letsencrypt",
+                                "rapidssl",
+                                "sectigo",
+                                "symantec",
+                                "thawte",
                                 "other"
                                 ],
                             "type": "string"
@@ -1434,6 +1445,7 @@
                                     "adminer",
                                     "control-panel",
                                     "ftp",
+                                    "git",
                                     "phpmyadmin",
                                     "sftp",
                                     "ssh",
