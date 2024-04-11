@@ -1,7 +1,5 @@
 {
 "$schema": "https://json-schema.org/draft/2020-12/schema",
-"title": "WordPress.org Hosting Directory JSON Schema",
-"version": "1.0",
 "properties":
     {
     "company":
@@ -833,6 +831,7 @@
                                     },
                                 "enabled":
                                     {
+                                    "description": "A boolean value indicating whether the shared hosting has an object cache.",
                                     "type": "boolean"
                                     }
                                 },
@@ -1565,6 +1564,7 @@
     "company",
     "products"
     ],
-"title": "Hosting Provider",
-"type": "object"
+"title": "WordPress.org Hosting Directory JSON Schema",
+"type": "object",
+"version": "1.0"
 }
