@@ -1,5 +1,7 @@
 {
 "$schema": "https://json-schema.org/draft/2020-12/schema",
+"title": "WordPress.org Hosting Directory JSON Schema",
+"version": "1.0",
 "properties":
     {
     "company":
@@ -31,7 +33,6 @@
                         "prepaid-card",
                         "qr",
                         "trial",
-                        "none",
                         "other"
                         ],
                     "type": "string"
@@ -150,6 +151,7 @@
                         {
                         "enabled":
                             {
+                            "description": "A boolean value indicating whether the shared hosting has a control panel.",
                             "type": "boolean"
                             },
                         "panel":
@@ -169,11 +171,11 @@
                                     "hestia",
                                     "interworx",
                                     "ispconfig",
+                                    "own-panel",
                                     "plesk",
                                     "sentora",
                                     "vesta",
                                     "virtualmin",
-                                    "own-panel",
                                     "other"
                                     ],
                                 "type": "string"
@@ -181,6 +183,11 @@
                             "type": "array"
                             }
                         },
+                    "required":
+                        [
+                        "enabled",
+                        "panel"
+                        ],
                     "type": "object"
                     },
                 "environment":
