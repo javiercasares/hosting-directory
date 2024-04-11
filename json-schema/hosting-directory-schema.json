@@ -821,10 +821,10 @@
                                         {
                                         "enum":
                                             [
-                                            "redis",
                                             "memcached",
                                             "own",
-                                            "others"
+                                            "redis",
+                                            "other"
                                             ],
                                         "type": "string"
                                         }
