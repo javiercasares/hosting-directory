@@ -755,6 +755,7 @@
                                         {
                                         "enum":
                                             [
+                                            "none",
                                             "ccpa",
                                             "coppa",
                                             "gdpr",
@@ -788,7 +789,7 @@
                                     },
                                 "additionalipv6":
                                     {
-                                    "description": " Indicates if extra IPv6 addresses can be allocated to your hosting account, useful for large-scale deployments.",
+                                    "description": "Indicates if extra IPv6 addresses can be allocated to your hosting account, useful for large-scale deployments.",
                                     "type": "boolean"
                                     },
                                 "ipv4":
@@ -853,7 +854,7 @@
                                     },
                                 "httpversions":
                                     {
-                                    "description": " Lists the HTTP protocol versions supported by the hosting server, impacting the speed and security of data transfer between the server and clients.",
+                                    "description": "Lists the HTTP protocol versions supported by the hosting server, impacting the speed and security of data transfer between the server and clients.",
                                     "items":
                                         {
                                         "enum":
@@ -965,7 +966,7 @@
                                     },
                                 "automaticphpupdates":
                                     {
-                                    "description": " Specifies if the hosting plan includes automatic updates for PHP, ensuring the latest features and security patches are applied.",
+                                    "description": "Specifies if the hosting plan includes automatic updates for PHP, ensuring the latest features and security patches are applied.",
                                     "type": "boolean"
                                     }
                                 },
