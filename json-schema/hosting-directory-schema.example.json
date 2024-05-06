@@ -1,382 +1,149 @@
 {
-"company":
-    {
-    "name": "Example Hosting Company",
-    "paymentoptions":
-        [
-        "credit-card",
-        "paypal",
-        "crypto"
-        ],
-    "urlhomepage": "https://example.com",
-    "urlprivacypolicy": "https://example.com/privacy-policy",
-    "urltermsconditions": "https://example.com/terms",
-    "wordpresscontributor": true
+    "company": {
+        "name": "Example Hosting Company",
+        "urlhomepage": "https://example.com",
+        "urlprivacypolicy": "https://example.com/privacy-policy",
+        "urltermsconditions": "https://example.com/terms",
+        "paymentoptions": [ "credit-card", "paypal", "crypto" ],
+        "iscontributor": true,
+        "urlfiveforthefuture": "https://wordpress.org/five-for-the-future/pledge/example/",
+        "users": {
+            "wordpressorgusername": [ "example" ],
+            "hostingtestbotname": [ "examplebot" ],
+            "companyemployees":[ "person1", "person2", "person3" ]
+        }
     },
-"products":
-    [
+    "products": [
         {
-        "category": "shared",
-        "controlpanel":
-            {
-            "enabled": true,
-            "type": "cpanel"
+            "name": "Shared Hosting Plan",
+            "urlproduct": "https://example.com/shared",
+            "category": "shared",
+            "management": "managed",
+            "price": "$",
+            "support": {
+              "languages": [ "ca", "en", "es" ],
+              "availability": [ "business-days" ],
+              "channels": [ "chat", "email", "form", "ticket"]
             },
-        "environment":
-            {
-            "cdn":
-                {
-                "cloudflareintegration": false,
-                "integrationwithothers": true,
-                "owncdn": true
+            "environment": {
+                "environments": [ "production" ],
+                "phpversions": [ "8.1", "8.2", "8.3" ],
+                "phpextensions": [ "bc", "curl", "dom", "exif", "fileinfo", "filter", "gd", "hash", "iconv",  "intl", "json", "mbstring", "mysqli", "opcache", "openssl", "pcre", "redis", "shmop", "simplexml", "sockets", "sqlite3", "xml", "xmlreader", "zip", "zlib" ],
+                "sqlversions": [ "mysql-5.7", "mariadb-10.11" ],
+                "systempackages": [ "curl", "ghostscript", "openssl" ],
+                "objectcacheoptions": [ "redis" ],
+                "performanceserverside": {
+                    "gzip": true,
+                    "brotli": true,
+                    "httpversions": [ "1.1", "2.0" ]
                 },
-            "datacenter":
-                {
-                "countries":
-                    [
-                    "US",
-                    "DE"
-                    ],
-                "datastored":
-                    [
-                    "US"
-                    ],
-                "privacycompliance":
-                    [
-                    "gdpr"
-                    ]
+                "serverupdates": {
+                    "automatickernelupdates": true,
+                    "automaticphpupdates": false,
+                    "automaticdatabasebupdates": false
                 },
-            "ipaddress":
-                {
-                "additionalipv4": false,
-                "additionalipv6": true,
-                "ipv4": true,
-                "ipv6": true
+                "serveraccess": [ "ftp", "phpmyadmin", "wp-cli" ],
+                "controlpanel":[ "cpanel" ],
+                "wordpressinstallation": [ "automatic" ],
+                "dnsmanagement": [ "manageable" ],
+                "cdn":{
+                    "owncdn": false,
+                    "cloudflareintegration": true,
+                    "integrationwithothers": false
                 },
-            "objectcacheoptions":
-                {
-                "enabled": true,
-                "items":
-                    [
-                    "redis"
-                    ]
+                "ipaddress": {
+                    "ipv4": true,
+                    "additionalipv4": false,
+                    "ipv6": true,
+                    "additionalipv6": false
                 },
-            "performanceserverside":
-                {
-                "brotli": true,
-                "gzip": true,
-                "httpversions":
-                    [
-                    "1.1",
-                    "2.0",
-                    "3.0"
-                    ]
-                },
-            "phpextensions":
-                [
-                "curl",
-                "json",
-                "mbstring"
-                ],
-            "phpversions":
-                [
-                "7.4",
-                "8.0"
-                ],
-            "serverupdates":
-                {
-                "automaticdatabasebupdates": true,
-                "automatickernelupdates": true,
-                "automaticphpupdates": true
-                },
-            "sqloptions":
-                [
-                "mysql-5.7",
-                "mariadb-10.4"
-                ],
-            "systempackages":
-                [
-                "curl",
-                "imagemagick"
-                ]
-            },
-        "management": "managed",
-        "name": "Shared Hosting Plan",
-        "price": "$",
-        "security":
-            {
-            "certificatetype": "letsencrypt",
-            "detectiontools":
-                {
-                "enabled": true,
-                "items":
-                    [
-                    "wpscan",
-                    "wordfence"
-                    ]
-                },
-            "firewalloptions":
-                {
-                "enabled": true,
-                "items":
-                    [
-                    "ufw"
-                    ]
-                },
-            "hsts": true,
-            "intrusiondetectionsystem":
-                {
-                "enabled": true,
-                "type": "ossec"
-                },
-            "malwarescanning": true,
-            "securitycertificate": true,
-            "tlsversions":
-                [
-                "1.2",
-                "1.3"
-                ]
-            },
-        "support":
-            {
-            "availability": "24-7",
-            "channels":
-                [
-                "chat",
-                "phone-free",
-                "forum"
-                ],
-            "community": "https://example.com/community",
-            "knowledgebase": "https://example.com/kb",
-            "languages":
-                [
-                "EN",
-                "ES",
-                "DE"
-                ]
-            },
-        "sustainability":
-            {
-            "carbonneutrality": true,
-            "energysource": "wind"
-            },
-        "urlproduct": "https://example.com/shared-hosting",
-        "wordpressdevelopment":
-            {
-            "dnsmanagement":
-                {
-                "enabled": true,
-                "items":
-                    [
-                    "manageable"
-                    ]
-                },
-            "environment":
-                {
-                "enabled": true,
-                "items":
-                    [
-                    "staging",
-                    "production"
-                    ]
-                },
-            "serveraccess":
-                [
-                "ssh",
-                "sftp"
-                ],
-            "wordpressinstallation":
-                {
-                "enabled": true,
-                "items":
-                    [
-                    "automatic",
-                    "manual"
-                    ]
+                "datacenter": {
+                    "countries": [ "de", "fr" ],
+                    "datastore": [ "de", "fr" ],
+                    "privacycompliance": [ "gdpr" ]
                 }
+            },
+            "performance": {
+                "averageUptime": 99.3,
+                "pageLoadSpeed": 84
+            },
+            "security": {
+                "securitycertificate": true,
+                "tlsversions": [ "1.2", "1.3" ],
+                "certificateprovider": [ "letsencrypt" ],
+                "hsts": true,
+                "firewall": [ "iptables" ],
+                "malwarescanning": true,
+                "detectiontools":[ "wpvulnerability" ]
+            },
+            "sustainability": {
+              "iscarbonneutral": true,
+              "energysource": [ "solar", "wind" ]
             }
-        },
-        {
-        "category": "vps",
-        "controlpanel":
-            {
-            "enabled": true,
-            "type": "plesk"
+        }, {
+            "name": "VPS Hosting Plan",
+            "urlproduct": "https://example.com/vps",
+            "category": "vps",
+            "management": "root-access",
+            "price": "$$$",
+            "support": {
+              "languages": [ "ca", "en", "es" ],
+              "availability": [ "business-days" ],
+              "channels": [ "chat", "email", "form", "ticket"]
             },
-        "environment":
-            {
-            "cdn":
-                {
-                "cloudflareintegration": true,
-                "integrationwithothers": false,
-                "owncdn": false
+            "environment": {
+                "environments": [ "development", "staging", "production" ],
+                "phpversions": [ "7.4", "8.0", "8.1", "8.2", "8.3" ],
+                "phpextensions": [ "bc", "curl", "dom", "exif", "fileinfo", "filter", "gd", "hash", "iconv",  "intl", "json", "mbstring", "mysqli", "opcache", "openssl", "pcre", "redis", "shmop", "simplexml", "sockets", "sqlite3", "xml", "xmlreader", "zip", "zlib" ],
+                "sqlversions": [ "mysql-8.0", "mariadb-10.11" ],
+                "systempackages": [ "curl", "ghostscript", "openssl" ],
+                "objectcacheoptions": [ "redis" ],
+                "performanceserverside": {
+                    "gzip": true,
+                    "brotli": true,
+                    "httpversions": [ "1.1", "2.0", "3.0" ]
                 },
-            "datacenter":
-                {
-                "countries":
-                    [
-                    "US",
-                    "SG"
-                    ],
-                "datastored":
-                    [
-                    "SG"
-                    ],
-                "privacycompliance":
-                    [
-                    "gdpr",
-                    "pdpa"
-                    ]
+                "serverupdates": {
+                    "automatickernelupdates": true,
+                    "automaticphpupdates": false,
+                    "automaticdatabasebupdates": false
                 },
-            "ipaddress":
-                {
-                "additionalipv4": true,
-                "additionalipv6": false,
-                "ipv4": true,
-                "ipv6": true
+                "serveraccess": [ "ftp", "phpmyadmin", "wp-cli" ],
+                "controlpanel":[ "none" ],
+                "wordpressinstallation": [ "manual" ],
+                "dnsmanagement": [ "external" ],
+                "cdn":{
+                    "owncdn": false,
+                    "cloudflareintegration": false,
+                    "integrationwithothers": false
                 },
-            "objectcacheoptions":
-                {
-                "enabled": true,
-                "items":
-                    [
-                    "memcached"
-                    ]
+                "ipaddress": {
+                    "ipv4": true,
+                    "additionalipv4": true,
+                    "ipv6": true,
+                    "additionalipv6": true
                 },
-            "performanceserverside":
-                {
-                "brotli": false,
-                "gzip": true,
-                "httpversions":
-                    [
-                    "2.0",
-                    "3.0"
-                    ]
-                },
-            "phpextensions":
-                [
-                "curl",
-                "json",
-                "xml"
-                ],
-            "phpversions":
-                [
-                "7.4",
-                "8.0",
-                "8.1"
-                ],
-            "serverupdates":
-                {
-                "automaticdatabasebupdates": true,
-                "automatickernelupdates": true,
-                "automaticphpupdates": true
-                },
-            "sqloptions":
-                [
-                "mysql-8.0"
-                ],
-            "systempackages":
-                [
-                "imagemagick",
-                "openssl"
-                ]
-            },
-        "management": "unmanaged",
-        "name": "VPS Hosting Plan",
-        "price": "$$$",
-        "security":
-            {
-            "certificatetype": "cloudflare",
-            "detectiontools":
-                {
-                "enabled": true,
-                "items":
-                    [
-                    "patchstack"
-                    ]
-                },
-            "firewalloptions":
-                {
-                "enabled": true,
-                "items":
-                    [
-                    "iptables"
-                    ]
-                },
-            "hsts": false,
-            "intrusiondetectionsystem":
-                {
-                "enabled": true,
-                "type": "snort"
-                },
-            "malwarescanning": true,
-            "securitycertificate": true,
-            "tlsversions":
-                [
-                "1.2",
-                "1.3"
-                ]
-            },
-        "support":
-            {
-            "availability": "business-days",
-            "channels":
-                [
-                "email",
-                "chat",
-                "phone-paid"
-                ],
-            "community": "https://example.com/vps-community",
-            "knowledgebase": "https://example.com/vps-kb",
-            "languages":
-                [
-                "EN",
-                "FR",
-                "ES"
-                ]
-            },
-        "sustainability":
-            {
-            "carbonneutrality": true,
-            "energysource": "solar"
-            },
-        "urlproduct": "https://example.com/vps-hosting",
-        "wordpressdevelopment":
-            {
-            "dnsmanagement":
-                {
-                "enabled": true,
-                "items":
-                    [
-                    "manageable",
-                    "external"
-                    ]
-                },
-            "environment":
-                {
-                "enabled": true,
-                "items":
-                    [
-                    "staging",
-                    "production",
-                    "local"
-                    ]
-                },
-            "serveraccess":
-                [
-                "ssh",
-                "sftp",
-                "wp-cli"
-                ],
-            "wordpressinstallation":
-                {
-                "enabled": true,
-                "items":
-                    [
-                    "manual",
-                    "hybrid"
-                    ]
+                "datacenter": {
+                    "countries": [ "us" ],
+                    "datastore": [ "us" ],
+                    "privacycompliance": [ "ccpa" ]
                 }
+            },
+            "performance": {
+                "averageUptime": 99.9,
+                "pageLoadSpeed": 91
+            },
+            "security": {
+                "securitycertificate": true,
+                "tlsversions": [ "1.2", "1.3" ],
+                "certificateprovider": [ "letsencrypt" ],
+                "hsts": true,
+                "firewall": [ "ufw", "iptables", "firewalld" ],
+                "malwarescanning": false,
+            },
+            "sustainability": {
+              "iscarbonneutral": false,
+              "energysource": [ "grid" ]
             }
         }
     ]
