@@ -14,7 +14,7 @@ An example:
 
 # To-Do
 
-- [ ] Review, normalize data, and improve the JSON Schema
+- [x] Review, normalize data, and improve the JSON Schema
 - [ ] Tool for validate the JSON Schema (probably based on other tool)
 - [ ] Tool to creathe the JSON file
 - [ ] Issue generator to send the file
@@ -22,8 +22,7 @@ An example:
 
 ## Possible fields
 
-- [ ] WordPress.org company user
-- [ ] Employees WP.org users
-- [ ] WordPress Test Runner bot user
-- [ ] Add some "none" to options
-
+- [x] WordPress.org company user
+- [x] Employees WP.org users
+- [x] WordPress Test Runner bot user
+- [x] Add some "none" to options
